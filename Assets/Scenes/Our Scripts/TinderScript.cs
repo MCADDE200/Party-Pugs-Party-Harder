@@ -18,8 +18,11 @@ namespace Lean.Touch
         public GameObject pugEntry;
         public GameObject fakeCat;
 
-        public Text Health;
-        public Text Score;
+        public Text healthText;
+        public Text scoreText;
+        public Text timerText;
+
+        float countdownTimer = 30.0f;
 
         // Use this for initialization
         void Start()
@@ -30,7 +33,17 @@ namespace Lean.Touch
         // Update is called once per frame
         void Update()
         {
-            
+            if (countdownTimer > 0)
+            {
+                countdownTimer -= Time.deltaTime;
+            }
+            timerText.text = "Time: " + (int)countdownTimer; 
+            if(countdownTimer <= 0)
+            {
+                Debug.Log("Time Out");
+            }
+            healthText.text = "Health: " + (3 - wrongAnswers);
+            scoreText.text = "Score: " + score;
         }
 
         void chooseAnimal()
