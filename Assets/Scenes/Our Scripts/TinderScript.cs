@@ -8,16 +8,18 @@ namespace Lean.Touch
 
     public class TinderScript : MonoBehaviour
     {
-        int counter = 0;
+        int counter;
         int numAnimals = 10;
-        int score = 0;
-        int wrongAnswers = 0;
+        int score;
+        int wrongAnswers;
 
         bool pug;
-        bool gameOver = false;
+        bool gameOver;
         
         public GameObject pugEntry;
         public GameObject fakeCat;
+        public GameObject resetLevelButton;
+        public GameObject mainMenuButton;
 
         public Text healthText;
         public Text scoreText;
@@ -27,7 +29,7 @@ namespace Lean.Touch
         public Image neg100;
         public Image gameOverImg;
 
-        float countdownTimer = 30.0f;
+        float countdownTimer;
 
 
         // Use this for initialization
@@ -37,6 +39,13 @@ namespace Lean.Touch
             neg100.enabled = false;
             gameOverImg.enabled = false;
             chooseAnimal();
+            counter = 0;
+            score = 0;
+            wrongAnswers = 0;
+            gameOver = false;
+            countdownTimer = 30.0f;
+            resetLevelButton.SetActive(false);
+            mainMenuButton.SetActive(false);
         }
 
         // Update is called once per frame
@@ -55,6 +64,8 @@ namespace Lean.Touch
             {
                 gameOver = true;
                 gameOverImg.enabled = true;
+                resetLevelButton.SetActive(true);
+                mainMenuButton.SetActive(true);
             }
             healthText.text = "Health: " + (3 - wrongAnswers);
             scoreText.text = "Score: " + score;
@@ -204,6 +215,16 @@ namespace Lean.Touch
             yield return new WaitForSeconds(0.5f);
             pos100.enabled = false;
             neg100.enabled = false;
+        }
+
+        public void ResetLevel()
+        {
+            Start();
+        }
+
+        public void LoadMainMenu()
+        {
+            Application.LoadLevel("Main Menu");
         }
     }
 }
