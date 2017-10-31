@@ -31,7 +31,15 @@ namespace Lean.Touch
 
         float countdownTimer;
 
+        AudioSource sound;
 
+        public AudioClip correctSound;
+        public AudioClip wrongSound;
+
+        private void Awake()
+        {
+            sound = GetComponent<AudioSource>();
+        }
         // Use this for initialization
         void Start()
         {
@@ -205,11 +213,13 @@ namespace Lean.Touch
             {
                 pos100.enabled = true;
                 score += 100;
+                sound.PlayOneShot(correctSound);
             }
             else
             {
                 neg100.enabled = true;
                 score -= 100;
+                sound.PlayOneShot(wrongSound);
                 wrongAnswers++;
             }
             yield return new WaitForSeconds(0.5f);
