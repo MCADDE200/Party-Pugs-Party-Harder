@@ -37,7 +37,7 @@ namespace Lean.Touch
                     var rigidbody = GetComponent<Rigidbody>();
 
                     // Add force to the rigidbody based on the swipe force
-                    rigidbody.AddForce(finger.SwipeScaledDelta.x, finger.SwipeScaledDelta.y, (Mathf.Abs(finger.SwipeScaledDelta.x) + Mathf.Abs(finger.SwipeScaledDelta.y)) / 2);
+                    rigidbody.AddForce(finger.SwipeScaledDelta.x *0.75f, finger.SwipeScaledDelta.y * 0.75f, (Mathf.Abs(finger.SwipeScaledDelta.x * 0.75f) + Mathf.Abs(finger.SwipeScaledDelta.y * 0.75f)) / 2);
 
 
                 }

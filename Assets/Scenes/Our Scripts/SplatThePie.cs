@@ -25,7 +25,7 @@ public class SplatThePie : MonoBehaviour {
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            Timer.text = "Time Left: " + timer.ToString();
+            Timer.text = "Time Left: " + (int)timer;
         }
 
         if (timer <= 0 || life <= 0)
