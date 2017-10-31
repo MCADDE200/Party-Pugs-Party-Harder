@@ -11,17 +11,25 @@ public class SplatThePie : MonoBehaviour {
     int life = 3;
     int score = 0;
     public Text Timer, Life, Score;
+    public Image GameOverImage;
+    public GameObject PlayAgainButton, MainMenuButton;
+    
 
     // Use this for initialization
     void Start ()
     {
+        timer = 60;
+        life = 3;
+        score = 0;
         rb = GetComponent<Rigidbody>();
+        PlayAgainButton.SetActive(false);
+        MainMenuButton.SetActive(false);
+        GameOverImage.enabled = false;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(Timer.text);
         if (timer > 0)
         {
             timer -= Time.deltaTime;
@@ -30,7 +38,9 @@ public class SplatThePie : MonoBehaviour {
 
         if (timer <= 0 || life <= 0)
         {
-            // Splat the cat ends here
+            PlayAgainButton.SetActive(true);
+            MainMenuButton.SetActive(true);
+            GameOverImage.enabled = true;
         }
 
         //Just for debug - have to remove it later
@@ -66,5 +76,15 @@ public class SplatThePie : MonoBehaviour {
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        Application.LoadLevel("Main Menu");
+    }
+
+    public void ResetLevel()
+    {
+        Start();
     }
 }
