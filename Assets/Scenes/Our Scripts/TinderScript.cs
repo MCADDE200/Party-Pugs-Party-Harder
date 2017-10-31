@@ -9,7 +9,7 @@ namespace Lean.Touch
     public class TinderScript : MonoBehaviour
     {
         int counter;
-        int numAnimals = 10;
+        int numAnimals = 11;
         int score;
         int wrongAnswers;
 
@@ -38,7 +38,6 @@ namespace Lean.Touch
             pos100.enabled = false;
             neg100.enabled = false;
             gameOverImg.enabled = false;
-            chooseAnimal();
             counter = 0;
             score = 0;
             wrongAnswers = 0;
@@ -46,6 +45,7 @@ namespace Lean.Touch
             countdownTimer = 30.0f;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
+            chooseAnimal();
         }
 
         // Update is called once per frame
