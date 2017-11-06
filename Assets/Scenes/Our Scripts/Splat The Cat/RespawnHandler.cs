@@ -14,6 +14,9 @@ public class RespawnHandler : MonoBehaviour {
     void Start ()
     {
         pieScript = gameObject.GetComponent<SplatThePie>();
+   
+        cat.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
+        pug.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
 
     }
 	

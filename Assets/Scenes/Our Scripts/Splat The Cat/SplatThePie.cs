@@ -11,7 +11,7 @@ public class SplatThePie : MonoBehaviour {
     public int life = 3;
     int score = 0;
     public Text Timer, Life, Score;
-    public Image GameOverImage;
+    public Image GameOverImage, scoreImg;
     public GameObject PlayAgainButton, MainMenuButton;
     public bool gameDone;
     public AudioSource audioSource;
@@ -22,12 +22,13 @@ public class SplatThePie : MonoBehaviour {
     void Start ()
     {
         //timer = 60;
-        life = 3;
+        life = 5;
         score = 0;
         rb = GetComponent<Rigidbody>();
         PlayAgainButton.SetActive(false);
         MainMenuButton.SetActive(false);
         GameOverImage.enabled = false;
+        scoreImg.enabled = false;
         gameDone = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         respawnScript = gameObject.GetComponent<RespawnHandler>();
@@ -74,21 +75,25 @@ public class SplatThePie : MonoBehaviour {
     {
         if (other.gameObject.name == "Cat")
         {
+            respawnScript.respawnTime = 5;
             audioSource.PlayOneShot(pieHit, 1);
-            score++;
+            score+=100;
+            StartCoroutine(scorePopUp());
             Score.text = "Score: " + score.ToString();
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
+            respawnScript.RespawnBoth();
         }
 
         if (other.gameObject.name == "Pug")
         {
+            respawnScript.respawnTime = 5;
             audioSource.PlayOneShot(pieMiss, 1);
             life--;
             Life.text = "Lifes left: " + life.ToString();
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
-            respawnScript.respawnTime = 5;
+            respawnScript.RespawnBoth();
         }
     }
 
@@ -100,5 +105,14 @@ public class SplatThePie : MonoBehaviour {
     public void ResetLevel()
     {
         Application.LoadLevel("Splat The Cat");
+    }
+
+
+    IEnumerator scorePopUp()
+    {
+        scoreImg.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        scoreImg.enabled = false;
+        
     }
 }
