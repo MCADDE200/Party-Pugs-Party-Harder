@@ -18,7 +18,7 @@ public class SplatThePie : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        timer = 60;
+        //timer = 60;
         life = 3;
         score = 0;
         rb = GetComponent<Rigidbody>();
@@ -30,13 +30,13 @@ public class SplatThePie : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime;
-            Timer.text = "Time Left: " + (int)timer;
-        }
+        //if (timer > 0)
+        //{
+        //    timer -= Time.deltaTime;
+        //    Timer.text = "Time Left: " + (int)timer;
+        //}
 
-        if (timer <= 0 || life <= 0)
+        if (life <= 0)
         {
             PlayAgainButton.SetActive(true);
             MainMenuButton.SetActive(true);
