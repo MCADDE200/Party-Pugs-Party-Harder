@@ -13,7 +13,7 @@ public class SplatThePie : MonoBehaviour {
     public Text Timer, Life, Score;
     public Image GameOverImage;
     public GameObject PlayAgainButton, MainMenuButton;
-    
+    public bool gameDone;
 
     // Use this for initialization
     void Start ()
@@ -25,28 +25,33 @@ public class SplatThePie : MonoBehaviour {
         PlayAgainButton.SetActive(false);
         MainMenuButton.SetActive(false);
         GameOverImage.enabled = false;
+        gameDone = false;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //if (timer > 0)
-        //{
-        //    timer -= Time.deltaTime;
-        //    Timer.text = "Time Left: " + (int)timer;
-        //}
-
-        if (life <= 0)
+        if (!gameDone)
         {
-            PlayAgainButton.SetActive(true);
-            MainMenuButton.SetActive(true);
-            GameOverImage.enabled = true;
-        }
+            //if (timer > 0)
+            //{
+            //    timer -= Time.deltaTime;
+            //    Timer.text = "Time Left: " + (int)timer;
+            //}
 
-        //Just for debug - have to remove it later
-        if (transform.position.y < 0)
-        {
-            gameObject.transform.position = Spawn.transform.position;
+            if (life <= 0)
+            {
+                PlayAgainButton.SetActive(true);
+                MainMenuButton.SetActive(true);
+                GameOverImage.enabled = true;
+                gameDone = true;
+            }
+
+            //Just for debug - have to remove it later
+            if (transform.position.y < 0)
+            {
+                gameObject.transform.position = Spawn.transform.position;
+            }
         }
     }
 
