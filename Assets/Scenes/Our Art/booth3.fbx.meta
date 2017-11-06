@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 68bd2b97241c8b7428850bcfe9a79ac3
+timeCreated: 1509913111
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Booth:pCylinder1
+    100004: Booth:pCylinder2
+    100006: Booth:pCylinder4
+    100008: Booth:pCylinder5
+    100010: Booth:pPlane1
+    100012: Booth:pPlane10
+    100014: Booth:pPlane11
+    100016: Booth:pPlane12
+    100018: Booth:pPlane13
+    100020: Booth:pPlane14
+    100022: Booth:pPlane15
+    100024: Booth:pPlane16
+    100026: Booth:pPlane2
+    100028: Booth:pPlane3
+    100030: Booth:pPlane4
+    100032: Booth:pPlane5
+    100034: Booth:pPlane6
+    100036: Booth:pPlane7
+    100038: Booth:pPlane8
+    100040: Booth:pPlane9
+    100042: Booth:pSphere1
+    100044: Booth:pSphere10
+    100046: Booth:pSphere11
+    100048: Booth:pSphere12
+    100050: Booth:pSphere13
+    100052: Booth:pSphere14
+    100054: Booth:pSphere15
+    100056: Booth:pSphere16
+    100058: Booth:pSphere17
+    100060: Booth:pSphere18
+    100062: Booth:pSphere19
+    100064: Booth:pSphere2
+    100066: Booth:pSphere3
+    100068: Booth:pSphere4
+    100070: Booth:pSphere5
+    100072: Booth:pSphere6
+    100074: Booth:pSphere7
+    100076: Booth:pSphere8
+    100078: Booth:pSphere9
+    100080: Booth:transform1
+    100082: Booth:transform10
+    100084: Booth:transform11
+    100086: Booth:transform12
+    100088: Booth:transform13
+    100090: Booth:transform14
+    100092: Booth:transform15
+    100094: Booth:transform16
+    100096: Booth:transform17
+    100098: Booth:transform18
+    100100: Booth:transform19
+    100102: Booth:transform2
+    100104: Booth:transform20
+    100106: Booth:transform21
+    100108: Booth:transform22
+    100110: Booth:transform23
+    100112: Booth:transform24
+    100114: Booth:transform25
+    100116: Booth:transform26
+    100118: Booth:transform27
+    100120: Booth:transform28
+    100122: Booth:transform29
+    100124: Booth:transform3
+    100126: Booth:transform30
+    100128: Booth:transform31
+    100130: Booth:transform32
+    100132: Booth:transform33
+    100134: Booth:transform34
+    100136: Booth:transform35
+    100138: Booth:transform36
+    100140: Booth:transform37
+    100142: Booth:transform38
+    100144: Booth:transform4
+    100146: Booth:transform5
+    100148: Booth:transform6
+    100150: Booth:transform7
+    100152: Booth:transform8
+    100154: Booth:transform9
+    400000: //RootNode
+    400002: Booth:pCylinder1
+    400004: Booth:pCylinder2
+    400006: Booth:pCylinder4
+    400008: Booth:pCylinder5
+    400010: Booth:pPlane1
+    400012: Booth:pPlane10
+    400014: Booth:pPlane11
+    400016: Booth:pPlane12
+    400018: Booth:pPlane13
+    400020: Booth:pPlane14
+    400022: Booth:pPlane15
+    400024: Booth:pPlane16
+    400026: Booth:pPlane2
+    400028: Booth:pPlane3
+    400030: Booth:pPlane4
+    400032: Booth:pPlane5
+    400034: Booth:pPlane6
+    400036: Booth:pPlane7
+    400038: Booth:pPlane8
+    400040: Booth:pPlane9
+    400042: Booth:pSphere1
+    400044: Booth:pSphere10
+    400046: Booth:pSphere11
+    400048: Booth:pSphere12
+    400050: Booth:pSphere13
+    400052: Booth:pSphere14
+    400054: Booth:pSphere15
+    400056: Booth:pSphere16
+    400058: Booth:pSphere17
+    400060: Booth:pSphere18
+    400062: Booth:pSphere19
+    400064: Booth:pSphere2
+    400066: Booth:pSphere3
+    400068: Booth:pSphere4
+    400070: Booth:pSphere5
+    400072: Booth:pSphere6
+    400074: Booth:pSphere7
+    400076: Booth:pSphere8
+    400078: Booth:pSphere9
+    400080: Booth:transform1
+    400082: Booth:transform10
+    400084: Booth:transform11
+    400086: Booth:transform12
+    400088: Booth:transform13
+    400090: Booth:transform14
+    400092: Booth:transform15
+    400094: Booth:transform16
+    400096: Booth:transform17
+    400098: Booth:transform18
+    400100: Booth:transform19
+    400102: Booth:transform2
+    400104: Booth:transform20
+    400106: Booth:transform21
+    400108: Booth:transform22
+    400110: Booth:transform23
+    400112: Booth:transform24
+    400114: Booth:transform25
+    400116: Booth:transform26
+    400118: Booth:transform27
+    400120: Booth:transform28
+    400122: Booth:transform29
+    400124: Booth:transform3
+    400126: Booth:transform30
+    400128: Booth:transform31
+    400130: Booth:transform32
+    400132: Booth:transform33
+    400134: Booth:transform34
+    400136: Booth:transform35
+    400138: Booth:transform36
+    400140: Booth:transform37
+    400142: Booth:transform38
+    400144: Booth:transform4
+    400146: Booth:transform5
+    400148: Booth:transform6
+    400150: Booth:transform7
+    400152: Booth:transform8
+    400154: Booth:transform9
+    2300000: Booth:pPlane16
+    3300000: Booth:pPlane16
+    4300000: Booth:pPlane16
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
