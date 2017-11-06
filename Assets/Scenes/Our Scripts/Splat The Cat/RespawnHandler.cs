@@ -26,6 +26,7 @@ public class RespawnHandler : MonoBehaviour {
             respawnText.text = "C/D: " + (int)respawnTime;
             if (respawnTime <= 0)
             {
+                pieScript.audioSource.PlayOneShot(pieScript.wrongSound, 1);
                 RespawnBoth();
                 respawnTime = 5;
                 pieScript.life -= 1;

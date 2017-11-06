@@ -14,6 +14,8 @@ public class SplatThePie : MonoBehaviour {
     public Image GameOverImage;
     public GameObject PlayAgainButton, MainMenuButton;
     public bool gameDone;
+    public AudioSource audioSource;
+    public AudioClip pieHit, pieMiss, gameOver, wrongSound;
 
     // Use this for initialization
     void Start ()
@@ -26,6 +28,7 @@ public class SplatThePie : MonoBehaviour {
         MainMenuButton.SetActive(false);
         GameOverImage.enabled = false;
         gameDone = false;
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -41,6 +44,7 @@ public class SplatThePie : MonoBehaviour {
 
             if (life <= 0)
             {
+                audioSource.PlayOneShot(gameOver, 1);
                 PlayAgainButton.SetActive(true);
                 MainMenuButton.SetActive(true);
                 GameOverImage.enabled = true;
@@ -68,6 +72,7 @@ public class SplatThePie : MonoBehaviour {
     {
         if (other.gameObject.name == "Cat")
         {
+            audioSource.PlayOneShot(pieHit, 1);
             score++;
             Score.text = "Score: " + score.ToString();
             rb.velocity = new Vector3(0, 0, 0);
@@ -76,6 +81,7 @@ public class SplatThePie : MonoBehaviour {
 
         if (other.gameObject.name == "Pug")
         {
+            audioSource.PlayOneShot(pieMiss, 1);
             life--;
             Life.text = "Lifes left: " + life.ToString();
             rb.velocity = new Vector3(0, 0, 0);
