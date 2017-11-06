@@ -27,7 +27,7 @@ public class SplatTheCat : MonoBehaviour {
         if (other.gameObject == pie)
         {
             respawnScript.RespawnBoth();
-            respawnScript.respawnTime = 5;
+            //respawnScript.respawnTime = 5;
         }
     }
 }

@@ -16,6 +16,7 @@ public class SplatThePie : MonoBehaviour {
     public bool gameDone;
     public AudioSource audioSource;
     public AudioClip pieHit, pieMiss, gameOver, wrongSound;
+    RespawnHandler respawnScript;
 
     // Use this for initialization
     void Start ()
@@ -29,6 +30,7 @@ public class SplatThePie : MonoBehaviour {
         GameOverImage.enabled = false;
         gameDone = false;
         audioSource = gameObject.GetComponent<AudioSource>();
+        respawnScript = gameObject.GetComponent<RespawnHandler>();
     }
 	
 	// Update is called once per frame
@@ -86,6 +88,7 @@ public class SplatThePie : MonoBehaviour {
             Life.text = "Lifes left: " + life.ToString();
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
+            respawnScript.respawnTime = 5;
         }
     }
 
