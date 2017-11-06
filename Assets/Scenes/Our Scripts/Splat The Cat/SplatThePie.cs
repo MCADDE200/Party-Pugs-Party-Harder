@@ -8,7 +8,7 @@ public class SplatThePie : MonoBehaviour {
     public GameObject Spawn;
     Rigidbody rb;
     float timer = 60;
-    int life = 3;
+    public int life = 3;
     int score = 0;
     public Text Timer, Life, Score;
     public Image GameOverImage;
@@ -85,6 +85,6 @@ public class SplatThePie : MonoBehaviour {
 
     public void ResetLevel()
     {
-        Start();
+        Application.LoadLevel("Splat The Cat");
     }
 }
