@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Splat The Cat.unity
     guid: 8f5a1b7cd6e9720458f867c3f3e88571
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 18cc500ca36fc6541bf05e45d8ee4ab3
