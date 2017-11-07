@@ -17,6 +17,12 @@ public class MusicScript : MonoBehaviour {
     {
         music = GetComponent<AudioSource>();
         DontDestroyOnLoad(this);
+        menuMusic = Resources.Load("Music/MenuMusic") as AudioClip;
+        bouncerPugMusic = Resources.Load("Music/BouncerPugMusic") as AudioClip;
+        splatTheCatMusic = Resources.Load("Music/SplatTheCatMusic") as AudioClip;
+        music.clip = menuMusic;
+        music.Play();
+        menuMusicOn = true;
     }
 
     private void OnEnable()
@@ -26,7 +32,7 @@ public class MusicScript : MonoBehaviour {
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if((scene.name == "Main Menu" || scene.name == "Level Select" || scene.name == "Outside" || scene.name == "Carnival Stalls") && (!menuMusicOn))
+        if((scene.name == "Main Menu" || scene.name == "Level Select" || scene.name == "Outside" || scene.name == "Carnival Stalls" || scene.name == "Shop") && (!menuMusicOn))
         {
             music.clip = menuMusic;
             music.Play();
