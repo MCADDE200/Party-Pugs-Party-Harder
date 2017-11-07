@@ -72,7 +72,7 @@ namespace Lean.Touch
             //{
             //    Debug.Log("Time Out");
             //}
-            if (wrongAnswers == 3 || (countdownTimer <= 0))
+            if (wrongAnswers == 3 || (countdownTimer <= 1))
             {
                 gameOver = true;
                 gameOverImg.enabled = true;

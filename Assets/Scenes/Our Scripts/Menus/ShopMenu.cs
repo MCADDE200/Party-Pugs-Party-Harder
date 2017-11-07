@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour {
+public class ShopMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,19 +15,10 @@ public class MainMenuScript : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void LoadGame()
-    {
-        SceneManager.LoadScene("Level Select");
-    }
 
-    public void QuitGame()
+    public void LoadMenu()
     {
-        Application.Quit();
-    }
-
-    public void LoadShop()
-    {
-        SceneManager.LoadScene("Shop");
-
+        SceneManager.LoadScene("Main Menu");
+    
     }
 }
