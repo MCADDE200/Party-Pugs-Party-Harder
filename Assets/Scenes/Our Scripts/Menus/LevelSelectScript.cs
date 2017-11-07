@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectScript : MonoBehaviour {
 
@@ -15,11 +16,11 @@ public class LevelSelectScript : MonoBehaviour {
 	}
     public void LoadBouncerPug()
     {
-        Application.LoadLevel("Bouncer Pug");
+        SceneManager.LoadScene("Bouncer Pug");
     }
 
     public void LoadSplatTheCat()
     {
-        Application.LoadLevel("Splat The Cat");
+        SceneManager.LoadScene("Splat The Cat");
     }
 }

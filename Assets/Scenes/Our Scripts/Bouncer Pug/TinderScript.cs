@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Lean.Touch
 {
@@ -9,9 +10,9 @@ namespace Lean.Touch
     public class TinderScript : MonoBehaviour
     {
         int counter;
-        int numAnimals = 11;
         int score;
         int wrongAnswers;
+        int pugCounter, catCounter;
 
         bool pug;
         bool gameOver;
@@ -50,7 +51,9 @@ namespace Lean.Touch
             score = 0;
             wrongAnswers = 0;
             gameOver = false;
-            countdownTimer = 30.0f;
+            countdownTimer = 3.0f;
+            pugCounter = 0;
+            catCounter = 0;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
             chooseAnimal();
@@ -64,11 +67,11 @@ namespace Lean.Touch
                 countdownTimer -= Time.deltaTime;
             }
             timerText.text = "Time: " + (int)countdownTimer; 
-            if(countdownTimer <= 0)
-            {
-                Debug.Log("Time Out");
-            }
-            if (counter == numAnimals || wrongAnswers == 3)
+            //if(countdownTimer <= 0)
+            //{
+            //    Debug.Log("Time Out");
+            //}
+            if (wrongAnswers == 3 || (countdownTimer <= 0))
             {
                 gameOver = true;
                 gameOverImg.enabled = true;
@@ -81,17 +84,22 @@ namespace Lean.Touch
 
         void chooseAnimal()
         {
+
             pugEntry.SetActive(false);
             fakeCat.SetActive(false);
-            int animal = Random.Range(0, 2);
-            if (counter < numAnimals && wrongAnswers < 3)
+            int animal = Random.Range(1, 11);
+            animal += pugCounter;
+            animal -= catCounter;
+            if (wrongAnswers < 3)
             {
-                if (animal == 0)
+                if (animal < 6)
                 {
                     pug = true;
                     //Debug.Log("Pug!");
                     pugEntry.SetActive(true);
                     counter++;
+                    catCounter = 0;
+                    pugCounter++;
                 }
                 else
                 {
@@ -99,6 +107,8 @@ namespace Lean.Touch
                     //Debug.Log("Stupid Cat!");
                     fakeCat.SetActive(true);
                     counter++;
+                    pugCounter = 0;
+                    catCounter++;
                 }
             }
         }
@@ -122,38 +132,22 @@ namespace Lean.Touch
             //{
             //    // Store the swipe delta in a temp variable
             var swipe = finger.SwipeScreenDelta;
-            if (counter <= numAnimals && wrongAnswers < 3)
+            if (wrongAnswers < 3)
             {
                 if (swipe.x < -Mathf.Abs(swipe.y))
                 {
                     // Debug.Log("Left!");
                     if (!pug)
                     {
-                        
-                        if (counter <= numAnimals)
-                        {
-                            chooseAnimal();
-                            bool a = true;
-                            StartCoroutine(scorePopup(a));
-                        }
-                        else
-                        {
-                            Debug.Log(score);
-                        }
+                        chooseAnimal();
+                        bool a = true;
+                        StartCoroutine(scorePopup(a));           
                     }
                     else
                     {
-                        
-                        if (counter <= numAnimals)
-                        {
-                            chooseAnimal();
-                            bool a = false;
-                            StartCoroutine(scorePopup(a));
-                        }
-                        else
-                        {
-                            Debug.Log(score);
-                        }
+                        chooseAnimal();
+                        bool a = false;
+                        StartCoroutine(scorePopup(a));
                     }
                 }
 
@@ -162,32 +156,15 @@ namespace Lean.Touch
                     //Debug.Log("Right!");
                     if (pug)
                     {
-                        
-                        if (counter <= numAnimals)
-                        {
-                            chooseAnimal();
-                            bool a = true;
-                            StartCoroutine(scorePopup(a));
-                        }
-                        else
-                        {
-                            Debug.Log(score);
-                        }
+                        chooseAnimal();
+                        bool a = true;
+                        StartCoroutine(scorePopup(a));
                     }
                     else
                     {
-                        
-                        if (counter <= numAnimals)
-                        {
-                            chooseAnimal();
-                            bool a = false;
-                            StartCoroutine(scorePopup(a));
-                        }
-                        else
-                        {
-
-                            Debug.Log(score);
-                        }
+                        chooseAnimal();
+                        bool a = false;
+                        StartCoroutine(scorePopup(a));
                     }
                 }
             }
@@ -209,7 +186,19 @@ namespace Lean.Touch
 
         IEnumerator scorePopup(bool imageShow)
         {
-            if(imageShow)
+            if (counter == 10)
+            {
+                countdownTimer = 3.0f;
+            }
+            else if (counter > 10 && counter <= 20)
+            {
+                countdownTimer = 2.0f;
+            }
+            else if (counter > 20)
+            {
+                countdownTimer = 1.0f;
+            }
+            if (imageShow)
             {
                 pos100.enabled = true;
                 score += 100;
@@ -224,7 +213,7 @@ namespace Lean.Touch
             }
             yield return new WaitForSeconds(0.5f);
             pos100.enabled = false;
-            neg100.enabled = false;
+            neg100.enabled = false;  
         }
 
         public void ResetLevel()
@@ -234,7 +223,7 @@ namespace Lean.Touch
 
         public void LoadMainMenu()
         {
-            Application.LoadLevel("Main Menu");
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }

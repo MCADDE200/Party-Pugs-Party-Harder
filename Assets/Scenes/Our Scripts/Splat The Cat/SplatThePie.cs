@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SplatThePie : MonoBehaviour {
 
@@ -99,12 +100,12 @@ public class SplatThePie : MonoBehaviour {
 
     public void LoadMainMenu()
     {
-        Application.LoadLevel("Main Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void ResetLevel()
     {
-        Application.LoadLevel("Splat The Cat");
+        SceneManager.LoadScene("Splat The Cat");
     }
 
 

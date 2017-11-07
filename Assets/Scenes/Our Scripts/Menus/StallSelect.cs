@@ -1,17 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StallSelect : MonoBehaviour
 
 { 
 
-    public GameObject loadingImage;
-
-    public void LoadScene(int SplatTheCat)
+    public void LoadSplatTheCat()
     {
-        loadingImage.SetActive(true);
-        Application.LoadLevel("Splat The Cat");
+        SceneManager.LoadScene("Splat The Cat");
     }
 
 

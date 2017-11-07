@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OutsideSelect : MonoBehaviour
 
 { 
 
-    public GameObject loadingImage;
-
-    public void LoadScene(int BouncerPug)
+    public void LoadBouncerPug()
     {
-        loadingImage.SetActive(true);
-        Application.LoadLevel("Bouncer Pug");
+        SceneManager.LoadScene("Bouncer Pug");
     }
 
-    
 }
