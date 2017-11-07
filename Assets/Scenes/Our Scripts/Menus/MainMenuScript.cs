@@ -8,8 +8,14 @@ public class MainMenuScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        GameObject musicData = GameObject.Find("MusicObject");
+        if (musicData == null)
+        {
+            musicData = new GameObject("MusicObject");
+            musicData.AddComponent<AudioSource>();
+            musicData.AddComponent<MusicScript>();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

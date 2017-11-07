@@ -21,6 +21,7 @@ namespace Lean.Touch
         public GameObject fakeCat;
         public GameObject resetLevelButton;
         public GameObject mainMenuButton;
+        public GameObject pauseButton;
 
         public Text healthText;
         public Text scoreText;
@@ -225,6 +226,12 @@ namespace Lean.Touch
         public void LoadMainMenu()
         {
             SceneManager.LoadScene("Main Menu");
+        }
+
+        public void LoadPauseScene()
+        {
+            Time.timeScale = 0;
+            SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
         }
     }
 }

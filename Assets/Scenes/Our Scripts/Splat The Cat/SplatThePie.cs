@@ -86,6 +86,18 @@ public class SplatThePie : MonoBehaviour {
             respawnScript.RespawnBoth();
         }
 
+        if (other.gameObject.name == "Human")
+        {
+            respawnScript.respawnTime = 5;
+            audioSource.PlayOneShot(pieHit, 1);
+            score += 200;
+            StartCoroutine(scorePopUp2());
+            Score.text = "Score: " + score.ToString();
+            rb.velocity = new Vector3(0, 0, 0);
+            gameObject.transform.position = Spawn.transform.position;
+            respawnScript.RespawnBoth();
+        }
+
         if (other.gameObject.name == "Pug")
         {
             respawnScript.respawnTime = 5;
@@ -116,4 +128,16 @@ public class SplatThePie : MonoBehaviour {
         scoreImg.enabled = false;
         
     }
+
+    IEnumerator scorePopUp2()
+    {
+        scoreImg.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        scoreImg.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        scoreImg.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        scoreImg.enabled = false;
+    }
+
 }
