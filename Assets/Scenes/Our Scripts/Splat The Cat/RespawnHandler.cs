@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RespawnHandler : MonoBehaviour {
 
-    public GameObject cat, pug;
+    public GameObject cat, pug, human;
     SplatThePie pieScript;
     public float respawnTime = 5;
     public Text respawnText;
@@ -17,6 +17,7 @@ public class RespawnHandler : MonoBehaviour {
    
         cat.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
         pug.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
+        human.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
 
     }
 	
@@ -43,5 +44,6 @@ public class RespawnHandler : MonoBehaviour {
     {
         pug.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
         cat.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
+        human.transform.position = new Vector3(Random.Range(-1, 6), Random.Range(1, 2), Random.Range(7, 11));
     }
 }
