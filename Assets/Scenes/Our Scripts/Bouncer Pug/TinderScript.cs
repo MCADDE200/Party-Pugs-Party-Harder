@@ -51,7 +51,7 @@ namespace Lean.Touch
             score = 0;
             wrongAnswers = 0;
             gameOver = false;
-            countdownTimer = 3.0f;
+            countdownTimer = 4f;
             pugCounter = 0;
             catCounter = 0;
             resetLevelButton.SetActive(false);
@@ -62,11 +62,12 @@ namespace Lean.Touch
         // Update is called once per frame
         void Update()
         {
-            if (countdownTimer > 0 && (!gameOver))
+            timerText.text = "Time: " + (int)countdownTimer;
+            if (countdownTimer > 1 && (!gameOver))
             {
                 countdownTimer -= Time.deltaTime;
             }
-            timerText.text = "Time: " + (int)countdownTimer; 
+            
             //if(countdownTimer <= 0)
             //{
             //    Debug.Log("Time Out");
@@ -186,17 +187,17 @@ namespace Lean.Touch
 
         IEnumerator scorePopup(bool imageShow)
         {
-            if (counter == 10)
+            if (counter <= 10)
             {
-                countdownTimer = 3.0f;
+                countdownTimer = 4.0f;
             }
             else if (counter > 10 && counter <= 20)
             {
-                countdownTimer = 2.0f;
+                countdownTimer = 3.0f;
             }
             else if (counter > 20)
             {
-                countdownTimer = 1.0f;
+                countdownTimer = 2.0f;
             }
             if (imageShow)
             {
