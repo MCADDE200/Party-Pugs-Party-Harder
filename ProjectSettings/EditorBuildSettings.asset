@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pause Scene.unity
     guid: 145db741aa9644543ad3b789e372250d
+  - enabled: 1
+    path: Assets/Scenes/TicketsMenu.unity
+    guid: 6ce187df05db76a4c8fc551ade14d41b
