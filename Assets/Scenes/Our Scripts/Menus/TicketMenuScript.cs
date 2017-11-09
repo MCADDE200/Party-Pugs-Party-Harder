@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ShopMenu : MonoBehaviour {
+public class TicketMenuScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,14 +15,9 @@ public class ShopMenu : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public void LoadMenu()
+    public void LoadShop()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Shop");
     
-    }
-    public void LoadTickets()
-    {
-        SceneManager.LoadScene("TicketsMenu");
     }
 }
