@@ -32,7 +32,7 @@ public class MusicScript : MonoBehaviour {
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if((scene.name == "Main Menu" || scene.name == "Level Select" || scene.name == "Outside" || scene.name == "Carnival Stalls" || scene.name == "Shop") && (!menuMusicOn))
+        if((scene.name == "Main Menu" || scene.name == "Level Select" || scene.name == "Outside" || scene.name == "Carnival Stalls" || scene.name == "Shop" || scene.name == "TicketsMenu") && (!menuMusicOn))
         {
             music.clip = menuMusic;
             music.Play();
