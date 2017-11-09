@@ -140,4 +140,9 @@ public class SplatThePie : MonoBehaviour {
         scoreImg.enabled = false;
     }
 
+    public void LoadPauseScene()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
+    }
 }

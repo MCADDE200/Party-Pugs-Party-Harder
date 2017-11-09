@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour {
-
+    
 	// Use this for initialization
 	void Start () {
 		
@@ -16,7 +17,21 @@ public class PauseScript : MonoBehaviour {
 
     public void ResumeGame()
     {
-        Time.timeScale = 1;
+        GameObject fingerSwipe = GameObject.Find("FingerSwipeObject");
+        if (fingerSwipe != null)
+        {
+            Lean.Touch.TinderScript tinderScript = fingerSwipe.GetComponent<Lean.Touch.TinderScript>();
+            tinderScript.paused = false;
+        }
         Destroy(gameObject);
+        Time.timeScale = 1;
+        
+    }
+
+    public void LoadMainMenu()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main Menu");
     }
 }

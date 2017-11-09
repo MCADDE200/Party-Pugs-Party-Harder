@@ -16,6 +16,7 @@ namespace Lean.Touch
 
         bool pug;
         bool gameOver;
+        public bool paused;
         
         public GameObject pugEntry;
         public GameObject fakeCat;
@@ -55,6 +56,7 @@ namespace Lean.Touch
             countdownTimer = 4f;
             pugCounter = 0;
             catCounter = 0;
+            paused = false;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
             chooseAnimal();
@@ -133,57 +135,60 @@ namespace Lean.Touch
             //if (InfoText != null)
             //{
             //    // Store the swipe delta in a temp variable
-            var swipe = finger.SwipeScreenDelta;
-            if (wrongAnswers < 3)
+            if (!paused)
             {
-                if (swipe.x < -Mathf.Abs(swipe.y))
+                var swipe = finger.SwipeScreenDelta;
+                if (wrongAnswers < 3)
                 {
-                    // Debug.Log("Left!");
-                    if (!pug)
+                    if (swipe.x < -Mathf.Abs(swipe.y))
                     {
-                        chooseAnimal();
-                        bool a = true;
-                        StartCoroutine(scorePopup(a));           
+                        // Debug.Log("Left!");
+                        if (!pug)
+                        {
+                            chooseAnimal();
+                            bool a = true;
+                            StartCoroutine(scorePopup(a));
+                        }
+                        else
+                        {
+                            chooseAnimal();
+                            bool a = false;
+                            StartCoroutine(scorePopup(a));
+                        }
                     }
-                    else
-                    {
-                        chooseAnimal();
-                        bool a = false;
-                        StartCoroutine(scorePopup(a));
-                    }
-                }
 
-                if (swipe.x > Mathf.Abs(swipe.y))
-                {
-                    //Debug.Log("Right!");
-                    if (pug)
+                    if (swipe.x > Mathf.Abs(swipe.y))
                     {
-                        chooseAnimal();
-                        bool a = true;
-                        StartCoroutine(scorePopup(a));
-                    }
-                    else
-                    {
-                        chooseAnimal();
-                        bool a = false;
-                        StartCoroutine(scorePopup(a));
+                        //Debug.Log("Right!");
+                        if (pug)
+                        {
+                            chooseAnimal();
+                            bool a = true;
+                            StartCoroutine(scorePopup(a));
+                        }
+                        else
+                        {
+                            chooseAnimal();
+                            bool a = false;
+                            StartCoroutine(scorePopup(a));
+                        }
                     }
                 }
+                //else
+                //{
+                //    Debug.Log("Game Over! /n Your Score was: " + score + " You got " + wrongAnswers + " Answers wrong");
+                //}
+
+                //if (swipe.y < -Mathf.Abs(swipe.x))
+                //{
+                //    Debug.Log("Down!");
+                //}
+
+                //if (swipe.y > Mathf.Abs(swipe.x))
+                //{
+                //    Debug.Log("Up!");
+                //}
             }
-            //else
-            //{
-            //    Debug.Log("Game Over! /n Your Score was: " + score + " You got " + wrongAnswers + " Answers wrong");
-            //}
-
-            //if (swipe.y < -Mathf.Abs(swipe.x))
-            //{
-            //    Debug.Log("Down!");
-            //}
-
-            //if (swipe.y > Mathf.Abs(swipe.x))
-            //{
-            //    Debug.Log("Up!");
-            //}
         }
 
         IEnumerator scorePopup(bool imageShow)
@@ -230,6 +235,7 @@ namespace Lean.Touch
 
         public void LoadPauseScene()
         {
+            paused = true;
             Time.timeScale = 0;
             SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
         }

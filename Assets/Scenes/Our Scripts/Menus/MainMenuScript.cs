@@ -23,7 +23,7 @@ public class MainMenuScript : MonoBehaviour {
 	}
     public void LoadGame()
     {
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("Outside");
     }
 
     public void QuitGame()

@@ -270,7 +270,7 @@ RectTransform:
   m_GameObject: {fileID: 870455295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 855398422}
   m_Father: {fileID: 1905331983}
@@ -319,7 +319,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 870455298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1743572580}
+        m_MethodName: LoadSplatTheCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &870455298
@@ -547,7 +558,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1743572579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f710d798505f84448358d06c0913bb4, type: 3}
+  m_Script: {fileID: 11500000, guid: be41f64eeb322a740920889765b67619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1743572581
@@ -650,7 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

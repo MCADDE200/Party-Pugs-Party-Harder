@@ -12,4 +12,9 @@ public class OutsideSelect : MonoBehaviour
         SceneManager.LoadScene("Bouncer Pug");
     }
 
+    public void LoadCarnivalStalls()
+    {
+        SceneManager.LoadScene("Carnival Stalls");
+    }
+
 }
