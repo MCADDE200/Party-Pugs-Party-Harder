@@ -24,13 +24,13 @@ namespace Lean.Touch
         public GameObject mainMenuButton;
         public GameObject pauseButton;
 
-        public Text healthText;
         public Text scoreText;
-        public Text timerText;
 
         public Image pos100;
         public Image neg100;
         public Image gameOverImg;
+        public Image num0Image, num1Image, num2Image, num3Image;
+        public Image h1Image, h2Image, h3Image;
 
         float countdownTimer;
 
@@ -46,6 +46,13 @@ namespace Lean.Touch
         // Use this for initialization
         void Start()
         {
+            num0Image.enabled = false;
+            num1Image.enabled = false;
+            num2Image.enabled = false;
+            num3Image.enabled = false;
+            h1Image.enabled = true;
+            h2Image.enabled = true;
+            h3Image.enabled = true;
             pos100.enabled = false;
             neg100.enabled = false;
             gameOverImg.enabled = false;
@@ -65,10 +72,38 @@ namespace Lean.Touch
         // Update is called once per frame
         void Update()
         {
-            timerText.text = "Time: " + (int)countdownTimer;
             if (countdownTimer > 1 && (!gameOver))
             {
                 countdownTimer -= Time.deltaTime;
+            }
+            if(countdownTimer > 3)
+            {
+                num3Image.enabled = true;
+            }
+            else if(countdownTimer > 2)
+            {
+                num3Image.enabled = false;
+                num2Image.enabled = true;
+            }
+            else if (countdownTimer > 1)
+            {
+                num2Image.enabled = false;
+                num1Image.enabled = true;
+            }
+            else
+            {
+                num1Image.enabled = false;
+                num0Image.enabled = true;
+            }
+
+            switch(wrongAnswers)
+            {
+                case 1:
+                    h3Image.enabled = false;
+                    break;
+                case 2:
+                    h2Image.enabled = false;
+                    break;
             }
             
             //if(countdownTimer <= 0)
@@ -79,10 +114,10 @@ namespace Lean.Touch
             {
                 gameOver = true;
                 gameOverImg.enabled = true;
+                h1Image.enabled = false;
                 resetLevelButton.SetActive(true);
                 mainMenuButton.SetActive(true);
             }
-            healthText.text = "Health: " + (3 - wrongAnswers);
             scoreText.text = "Score: " + score;
         }
 
