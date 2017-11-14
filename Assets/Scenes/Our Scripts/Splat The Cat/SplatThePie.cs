@@ -13,7 +13,7 @@ public class SplatThePie : MonoBehaviour {
     int score = 0;
     public Text Timer, Life, Score;
     public Image GameOverImage, scoreImg, heartImg1, heartImg2, heartImg3, heartImg4, heartImg5;
-    public GameObject PlayAgainButton, MainMenuButton;
+    public GameObject PlayAgainButton, MainMenuButton, pieTouch;
     public bool gameDone;
     public AudioSource audioSource;
     public AudioClip pieHit, pieMiss, gameOver, wrongSound;
@@ -32,6 +32,7 @@ public class SplatThePie : MonoBehaviour {
         GameOverImage.enabled = false;
         scoreImg.enabled = false;
         gameDone = false;
+        pieTouch.SetActive(true);
         audioSource = gameObject.GetComponent<AudioSource>();
         respawnScript = gameObject.GetComponent<RespawnHandler>();
     }
@@ -54,6 +55,7 @@ public class SplatThePie : MonoBehaviour {
                 MainMenuButton.SetActive(true);
                 GameOverImage.enabled = true;
                 gameDone = true;
+                pieTouch.SetActive(false);
             }
 
             //Just for debug - have to remove it later
@@ -183,6 +185,7 @@ public class SplatThePie : MonoBehaviour {
     public void LoadPauseScene()
     {
         gameDone = true;
+        pieTouch.SetActive(false);
         Time.timeScale = 0;
         SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
     }

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 namespace Lean.Touch
 {
     // This script will push a rigidbody around when you swipe
@@ -32,10 +31,10 @@ namespace Lean.Touch
             if (Physics.Raycast(ray, out hit, float.PositiveInfinity, LayerMask) == true)
             {
                 // Was that collider this one?
-                if (hit.collider.gameObject.name == "Pie")
+                if (hit.collider.gameObject.name == "PieTouch")
                 {
                     // Get the rigidbody component
-                    var rigidbody = GetComponent<Rigidbody>();
+                    var rigidbody = GameObject.Find("Pie").GetComponent<Rigidbody>();
 
                     // Add force to the rigidbody based on the swipe force
                     rigidbody.AddForce(finger.SwipeScaledDelta.x * 0.7f, finger.SwipeScaledDelta.y * 0.7f, (Mathf.Abs(finger.SwipeScaledDelta.x * 0.7f) + Mathf.Abs(finger.SwipeScaledDelta.y * 0.7f)) / 2);
