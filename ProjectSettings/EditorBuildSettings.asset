@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Carnival Stalls.unity
     guid: 1fbbb876693e2104f862ac90057e6fd5
-  - enabled: 0
-    path: 
-    guid: 4aa3b6a3c8c47cd48bf8dba1a5e7fc25
   - enabled: 1
     path: Assets/Scenes/Bouncer Pug.unity
     guid: ba334261daf3be74bb5aa5f84910c19c
