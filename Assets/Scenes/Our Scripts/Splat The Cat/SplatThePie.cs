@@ -12,12 +12,13 @@ public class SplatThePie : MonoBehaviour {
     public int life = 3;
     int score = 0;
     public Text Timer, Life, Score;
-    public Image GameOverImage, scoreImg;
+    public Image GameOverImage, scoreImg, heartImg1, heartImg2, heartImg3, heartImg4, heartImg5;
     public GameObject PlayAgainButton, MainMenuButton;
     public bool gameDone;
     public AudioSource audioSource;
     public AudioClip pieHit, pieMiss, gameOver, wrongSound;
     RespawnHandler respawnScript;
+
 
     // Use this for initialization
     void Start ()
@@ -59,6 +60,45 @@ public class SplatThePie : MonoBehaviour {
             if (transform.position.y < 0)
             {
                 gameObject.transform.position = Spawn.transform.position;
+            }
+
+            switch(life)
+            {
+                case 1:
+                    heartImg1.enabled = true;
+                    heartImg2.enabled = false;
+                    heartImg3.enabled = false;
+                    heartImg4.enabled = false;
+                    heartImg5.enabled = false;
+                    break;
+                case 2:
+                    heartImg1.enabled = true;
+                    heartImg2.enabled = true;
+                    heartImg3.enabled = false;
+                    heartImg4.enabled = false;
+                    heartImg5.enabled = false;
+                    break;
+                case 3:
+                    heartImg1.enabled = true;
+                    heartImg2.enabled = true;
+                    heartImg3.enabled = true;
+                    heartImg4.enabled = false;
+                    heartImg5.enabled = false;
+                    break;
+                case 4:
+                    heartImg1.enabled = true;
+                    heartImg2.enabled = true;
+                    heartImg3.enabled = true;
+                    heartImg4.enabled = true;
+                    heartImg5.enabled = false;
+                    break;
+                case 5:
+                    heartImg1.enabled = true;
+                    heartImg2.enabled = true;
+                    heartImg3.enabled = true;
+                    heartImg4.enabled = true;
+                    heartImg5.enabled = true;
+                    break;
             }
         }
     }
@@ -142,6 +182,7 @@ public class SplatThePie : MonoBehaviour {
 
     public void LoadPauseScene()
     {
+        gameDone = true;
         Time.timeScale = 0;
         SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
     }
