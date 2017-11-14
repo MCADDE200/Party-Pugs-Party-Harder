@@ -115,6 +115,8 @@ namespace Lean.Touch
                 gameOver = true;
                 gameOverImg.enabled = true;
                 h1Image.enabled = false;
+                h2Image.enabled = true;
+                h3Image.enabled = true;
                 resetLevelButton.SetActive(true);
                 mainMenuButton.SetActive(true);
             }
