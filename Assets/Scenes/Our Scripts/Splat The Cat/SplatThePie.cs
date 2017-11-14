@@ -60,7 +60,7 @@ public class SplatThePie : MonoBehaviour {
             if (transform.position.y < 0)
             {
                 gameObject.transform.position = Spawn.transform.position;
-                pieTouch.transform.position = Spawn.transform.position;
+
             }
 
             switch(life)
@@ -110,7 +110,6 @@ public class SplatThePie : MonoBehaviour {
         {
             rb.velocity = new Vector3(0,0,0);
             gameObject.transform.position = Spawn.transform.position;
-            pieTouch.transform.position = Spawn.transform.position;
         }
     }
 
@@ -125,7 +124,6 @@ public class SplatThePie : MonoBehaviour {
             Score.text = "Score: " + score.ToString();
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
-            pieTouch.transform.position = Spawn.transform.position;
             respawnScript.RespawnBoth();
         }
 
@@ -138,7 +136,6 @@ public class SplatThePie : MonoBehaviour {
             Score.text = "Score: " + score.ToString();
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
-            pieTouch.transform.position = Spawn.transform.position;
             respawnScript.RespawnBoth();
         }
 
@@ -150,7 +147,6 @@ public class SplatThePie : MonoBehaviour {
             Life.text = "Lifes left: " + life.ToString();
             rb.velocity = new Vector3(0, 0, 0);
             gameObject.transform.position = Spawn.transform.position;
-            pieTouch.transform.position = Spawn.transform.position;
             respawnScript.RespawnBoth();
         }
     }
