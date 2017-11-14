@@ -182,6 +182,7 @@ public class SplatThePie : MonoBehaviour {
 
     public void LoadPauseScene()
     {
+        gameDone = true;
         Time.timeScale = 0;
         SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
     }
