@@ -13,7 +13,7 @@ public class SplatThePie : MonoBehaviour {
     int score = 0;
     public Text Timer, Life, Score;
     public Image GameOverImage, scoreImg, heartImg1, heartImg2, heartImg3, heartImg4, heartImg5;
-    public GameObject PlayAgainButton, MainMenuButton;
+    public GameObject PlayAgainButton, MainMenuButton, pieTouch;
     public bool gameDone;
     public AudioSource audioSource;
     public AudioClip pieHit, pieMiss, gameOver, wrongSound;
@@ -60,6 +60,7 @@ public class SplatThePie : MonoBehaviour {
             if (transform.position.y < 0)
             {
                 gameObject.transform.position = Spawn.transform.position;
+
             }
 
             switch(life)
