@@ -22508,8 +22508,8 @@ MonoBehaviour:
   - {fileID: 1335102768}
   - {fileID: 1697807574}
   - {fileID: 599472973}
-  pugCatArray:
-  - {fileID: 186312, guid: 911e29c5404e28245a77c56efa6b614c, type: 2}
+  pugArray:
+  - {fileID: 186312, guid: 31dad63c9d9b59e46b85a77c6beaa874, type: 2}
   - {fileID: 186312, guid: ee7e5b0bb547c634ab6b86b456342ec4, type: 2}
   - {fileID: 186312, guid: 6c3f396ef30b806409b4e5071632fb69, type: 2}
   - {fileID: 186312, guid: 1f488f40b4e000443b6759fbe8d4ae91, type: 2}
@@ -22519,6 +22519,8 @@ MonoBehaviour:
   - {fileID: 186312, guid: 203c25712549e0c41a59a6fa9807c9dd, type: 2}
   - {fileID: 186312, guid: 708bbd45d4be6db42b29b4108f73f008, type: 2}
   - {fileID: 186312, guid: 89305c0539339d749a6f059aa2f95ab2, type: 2}
+  catArray:
+  - {fileID: 186312, guid: ea09db595ce322a4ab7b85f4de28c48f, type: 2}
   scoreText: {fileID: 660192647}
   pos100: {fileID: 883687828}
   neg100: {fileID: 343884666}
