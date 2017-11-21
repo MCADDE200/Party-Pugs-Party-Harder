@@ -9,12 +9,13 @@ public class SplatThePie : MonoBehaviour {
     public GameObject Spawn;
     Rigidbody rb;
     float timer = 60;
+    float startTimer;
     public int life = 3;
     int score = 0;
     public Text Timer, Life, Score;
-    public Image GameOverImage, scoreImg, heartImg1, heartImg2, heartImg3, heartImg4, heartImg5;
+    public Image GameOverImage, scoreImg, heartImg1, heartImg2, heartImg3, heartImg4, heartImg5, startNum1Image, startNum2Image, startNum3Image, goImage;
     public GameObject PlayAgainButton, MainMenuButton, pieTouch;
-    public bool gameDone;
+    public bool gameDone, gameStarted;
     public AudioSource audioSource;
     public AudioClip pieHit, pieMiss, gameOver, wrongSound;
     RespawnHandler respawnScript;
@@ -26,12 +27,18 @@ public class SplatThePie : MonoBehaviour {
         //timer = 60;
         life = 5;
         score = 0;
+        startTimer = 3;
         rb = GetComponent<Rigidbody>();
         PlayAgainButton.SetActive(false);
         MainMenuButton.SetActive(false);
         GameOverImage.enabled = false;
         scoreImg.enabled = false;
         gameDone = false;
+        goImage.enabled = false;
+        startNum1Image.enabled = false;
+        startNum2Image.enabled = false;
+        startNum3Image.enabled = true;
+        gameStarted = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         respawnScript = gameObject.GetComponent<RespawnHandler>();
     }
@@ -39,7 +46,37 @@ public class SplatThePie : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (!gameDone)
+
+        if (!gameStarted)
+        {
+            if (startTimer > 0 && (!gameDone))
+            {
+                startTimer -= Time.deltaTime;
+            }
+            if (startTimer > 3)
+            {
+                startNum3Image.enabled = true;
+            }
+            else if (startTimer > 2)
+            {
+                startNum3Image.enabled = false;
+                startNum2Image.enabled = true;
+            }
+            else if (startTimer > 1)
+            {
+                startNum2Image.enabled = false;
+                startNum1Image.enabled = true;
+            }
+            else
+            {
+                startNum1Image.enabled = false;
+                StartCoroutine(goImagePopup());
+                gameStarted = true;
+            }
+        }
+
+
+        if (!gameDone && gameStarted)
         {
             //if (timer > 0)
             //{
@@ -179,6 +216,13 @@ public class SplatThePie : MonoBehaviour {
         scoreImg.enabled = true;
         yield return new WaitForSeconds(0.2f);
         scoreImg.enabled = false;
+    }
+
+    IEnumerator goImagePopup()
+    {
+        goImage.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        goImage.enabled = false;
     }
 
     public void LoadPauseScene()
