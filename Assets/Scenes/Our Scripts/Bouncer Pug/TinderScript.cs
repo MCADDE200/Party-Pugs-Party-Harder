@@ -80,7 +80,7 @@ namespace Lean.Touch
         // Update is called once per frame
         void Update()
         {
-            if (!gameStarted)
+            if (gameStarted)
             {
                 if (countdownTimer > 1 && (!gameOver))
                 {
@@ -107,7 +107,7 @@ namespace Lean.Touch
                     num0Image.enabled = true;
                 }
             }
-            while (!gameStarted)
+            if (!gameStarted)
             {
                 if (startTimer > 0 && (!gameOver))
                 {
@@ -157,8 +157,8 @@ namespace Lean.Touch
                 gameOver = true;
                 gameOverImg.enabled = true;
                 h1Image.enabled = false;
-                h2Image.enabled = true;
-                h3Image.enabled = true;
+                h2Image.enabled = false;
+                h3Image.enabled = false;
                 resetLevelButton.SetActive(true);
                 mainMenuButton.SetActive(true);
             }
@@ -214,7 +214,7 @@ namespace Lean.Touch
             //if (InfoText != null)
             //{
             //    // Store the swipe delta in a temp variable
-            if ((!bouncerPaused) && (gameStarted))
+            if ((!bouncerPaused) && (gameStarted) && (!gameOver))
             {
                 var swipe = finger.SwipeScreenDelta;
                 if (wrongAnswers < 3)
