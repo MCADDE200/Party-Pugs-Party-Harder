@@ -10,6 +10,7 @@ namespace Lean.Touch
     public class TinderScript : MonoBehaviour
     {
         int counter;
+        int arrayCounter;
         int score;
         int wrongAnswers;
         int pugCounter, catCounter;
@@ -18,15 +19,21 @@ namespace Lean.Touch
         bool gameOver;
         bool gameStarted;
         public bool bouncerPaused;
+
+        public List<bool> isPug = new List<bool>();
         
         public GameObject pugEntry;
         public GameObject fakeCat;
         public GameObject resetLevelButton;
         public GameObject mainMenuButton;
         public GameObject pauseButton;
+        public GameObject pos;
+        GameObject pugTest;
+        GameObject catTest;
 
         public GameObject[] pugSkins;
-        public GameObject[] pugCatArray;
+        public GameObject[] pugArray;
+        public GameObject[] catArray;
 
         public Text scoreText;
 
@@ -43,8 +50,6 @@ namespace Lean.Touch
 
         public AudioClip correctSound;
         public AudioClip wrongSound;
-
-        //GameDataScript gameDataScript;
 
         private void Awake()
         {
@@ -69,6 +74,7 @@ namespace Lean.Touch
             gameOverImg.enabled = false;
 
             counter = 0;
+            arrayCounter = 0;
             score = 0;
             wrongAnswers = 0;
 
@@ -84,23 +90,21 @@ namespace Lean.Touch
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
 
-            for (int i = 0; i < 11; i++)
-            {
+            populateList();
+            SpawnAnimal();
 
-            }
+            //for (int i = 0; i < 11; i++)
+            //{
+            //    pugSkins[i].SetActive(false);
+            //}
+            //GameObject gameData = GameObject.Find("GameData");
+            //if (gameData != null)
+            //{
+            //    pugSkins[gameData.GetComponent<GameDataScript>().selectedSkin].SetActive(true) ;
+            //}
+            ////pugSkins[gameDataScript.selectedSkin].SetActive(true);
 
-            for (int i = 0; i < 11; i++)
-            {
-                pugSkins[i].SetActive(false);
-            }
-            GameObject gameData = GameObject.Find("GameData");
-            if (gameData != null)
-            {
-                pugSkins[gameData.GetComponent<GameDataScript>().selectedSkin].SetActive(true) ;
-            }
-            //pugSkins[gameDataScript.selectedSkin].SetActive(true);
-
-            chooseAnimal();
+            ////chooseAnimal();
         }
 
         // Update is called once per frame
@@ -174,10 +178,6 @@ namespace Lean.Touch
                     break;
             }
             
-            //if(countdownTimer <= 0)
-            //{
-            //    Debug.Log("Time Out");
-            //}
             if (wrongAnswers == 3 || (countdownTimer <= 1))
             {
                 gameOver = true;
@@ -191,11 +191,27 @@ namespace Lean.Touch
             scoreText.text = "Score: " + score;
         }
 
-        void chooseAnimal()
+        void SpawnAnimal()
         {
+            Destroy(GameObject.Find("PugTest"));
+            Destroy(GameObject.Find("CatTest"));
+            isPug.RemoveAt(0);
 
-            pugEntry.SetActive(false);
-            fakeCat.SetActive(false);
+            if (isPug[0] == true)
+            {
+                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 10)], pos.transform);
+                pugTest.name = "PugTest";
+            }
+            else
+            {
+                GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                catTest.name = "CatTest";
+            }
+            ChooseAnimal();
+        }
+
+        void ChooseAnimal()
+        {
             int animal = Random.Range(1, 11);
             animal += pugCounter;
             animal -= catCounter;
@@ -204,18 +220,14 @@ namespace Lean.Touch
                 if (animal < 6)
                 {
                     pug = true;
-                    //Debug.Log("Pug!");
-                    pugEntry.SetActive(true);
-                    counter++;
+                    isPug.Add(true);
                     catCounter = 0;
                     pugCounter++;
                 }
                 else
                 {
                     pug = false;
-                    //Debug.Log("Stupid Cat!");
-                    fakeCat.SetActive(true);
-                    counter++;
+                    isPug.Add(false);
                     pugCounter = 0;
                     catCounter++;
                 }
@@ -224,6 +236,27 @@ namespace Lean.Touch
 
         void populateList()
         {
+            for (int i = 0; i < 10; i++)
+            {
+                int animal = Random.Range(1, 11);
+                animal += pugCounter;
+                animal -= catCounter;
+                if (animal < 6)
+                {
+                    pug = true;
+                    isPug[i] = true;
+                    catCounter = 0;
+                    pugCounter++;
+                }
+                else
+                {
+                    pug = false;
+                    isPug[i] = false;
+                    pugCounter = 0;
+                    catCounter++;
+                }
+            }
+            
 
         }
 
@@ -253,15 +286,20 @@ namespace Lean.Touch
                     if (swipe.x < -Mathf.Abs(swipe.y))
                     {
                         // Debug.Log("Left!");
-                        if (!pug)
+                        if (isPug[0] == false)
                         {
-                            chooseAnimal();
+                            counter++;
+                            arrayCounter++;
+                            SpawnAnimal();
                             bool a = true;
                             StartCoroutine(scorePopup(a));
+
                         }
                         else
                         {
-                            chooseAnimal();
+                            counter++;
+                            arrayCounter++;
+                            SpawnAnimal();
                             bool a = false;
                             StartCoroutine(scorePopup(a));
                         }
@@ -270,15 +308,19 @@ namespace Lean.Touch
                     if (swipe.x > Mathf.Abs(swipe.y))
                     {
                         //Debug.Log("Right!");
-                        if (pug)
+                        if (isPug[0] == true)
                         {
-                            chooseAnimal();
+                            counter++;
+                            arrayCounter++;
+                            SpawnAnimal();
                             bool a = true;
                             StartCoroutine(scorePopup(a));
                         }
                         else
                         {
-                            chooseAnimal();
+                            counter++;
+                            arrayCounter++;
+                            SpawnAnimal();
                             bool a = false;
                             StartCoroutine(scorePopup(a));
                         }

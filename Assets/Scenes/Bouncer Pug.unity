@@ -4085,6 +4085,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 420bde364644a314396dc8ed24ee99d6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &88875273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 88875274}
+  m_Layer: 0
+  m_Name: FrontPaws
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88875274
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88875273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.875, y: -0.306, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92729471
 GameObject:
   m_ObjectHideFlags: 0
@@ -22467,6 +22495,7 @@ MonoBehaviour:
   resetLevelButton: {fileID: 1907689735}
   mainMenuButton: {fileID: 671432076}
   pauseButton: {fileID: 856130735}
+  pos: {fileID: 88875273}
   pugSkins:
   - {fileID: 53279836}
   - {fileID: 1127625092}
@@ -22479,6 +22508,17 @@ MonoBehaviour:
   - {fileID: 1335102768}
   - {fileID: 1697807574}
   - {fileID: 599472973}
+  pugCatArray:
+  - {fileID: 186312, guid: 911e29c5404e28245a77c56efa6b614c, type: 2}
+  - {fileID: 186312, guid: ee7e5b0bb547c634ab6b86b456342ec4, type: 2}
+  - {fileID: 186312, guid: 6c3f396ef30b806409b4e5071632fb69, type: 2}
+  - {fileID: 186312, guid: 1f488f40b4e000443b6759fbe8d4ae91, type: 2}
+  - {fileID: 186312, guid: d64760fa82615ef468a1adc8b58e5877, type: 2}
+  - {fileID: 186312, guid: c7c7947b7ebc6af499eed71e7e2f40cb, type: 2}
+  - {fileID: 186312, guid: 9d7584fc0be0f7c4993311c6ab9375ba, type: 2}
+  - {fileID: 186312, guid: 203c25712549e0c41a59a6fa9807c9dd, type: 2}
+  - {fileID: 186312, guid: 708bbd45d4be6db42b29b4108f73f008, type: 2}
+  - {fileID: 186312, guid: 89305c0539339d749a6f059aa2f95ab2, type: 2}
   scoreText: {fileID: 660192647}
   pos100: {fileID: 883687828}
   neg100: {fileID: 343884666}
