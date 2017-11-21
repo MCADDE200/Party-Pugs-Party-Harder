@@ -41,7 +41,7 @@ namespace Lean.Touch
                     var rigidbody = GameObject.Find("Pie").GetComponent<Rigidbody>();
 
                     // Add force to the rigidbody based on the swipe force
-                    rigidbody.AddForce(finger.SwipeScaledDelta.x * 0.7f, finger.SwipeScaledDelta.y * 0.7f, (Mathf.Abs(finger.SwipeScaledDelta.x * 0.7f) + Mathf.Abs(finger.SwipeScaledDelta.y * 0.7f)) / 2);
+                    rigidbody.AddForce(finger.SwipeScaledDelta.x * 0.77f, finger.SwipeScaledDelta.y * 0.77f, (Mathf.Abs(finger.SwipeScaledDelta.x * 0.77f) + Mathf.Abs(finger.SwipeScaledDelta.y * 0.77f)) / 2);
 
 
                 }
