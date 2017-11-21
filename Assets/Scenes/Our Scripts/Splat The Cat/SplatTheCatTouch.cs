@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 
+
 namespace Lean.Touch
 {
     // This script will push a rigidbody around when you swipe
     [RequireComponent(typeof(Rigidbody))]
     public class SplatTheCatTouch : MonoBehaviour
     {
+
+        public bool splatTheCatPaused;
+
         // This stores the layers we want the raycast to hit (make sure this GameObject's layer is included!)
         public LayerMask LayerMask = UnityEngine.Physics.DefaultRaycastLayers;
 

@@ -16,7 +16,8 @@ namespace Lean.Touch
 
         bool pug;
         bool gameOver;
-        public bool paused;
+        bool gameStarted;
+        public bool bouncerPaused;
         
         public GameObject pugEntry;
         public GameObject fakeCat;
@@ -29,10 +30,11 @@ namespace Lean.Touch
         public Image pos100;
         public Image neg100;
         public Image gameOverImg;
-        public Image num0Image, num1Image, num2Image, num3Image;
+        public Image num0Image, num1Image, num2Image, num3Image, goImage, startNum1Image, startNum2Image, startNum3Image; //Stores all the countdown timer images to activate and deactivate
         public Image h1Image, h2Image, h3Image;
 
         float countdownTimer;
+        float startTimer;
 
         AudioSource sound;
 
@@ -50,6 +52,10 @@ namespace Lean.Touch
             num1Image.enabled = false;
             num2Image.enabled = false;
             num3Image.enabled = false;
+            goImage.enabled = false;
+            startNum1Image.enabled = false;
+            startNum2Image.enabled = false;
+            startNum3Image.enabled = true;
             h1Image.enabled = true;
             h2Image.enabled = true;
             h3Image.enabled = true;
@@ -60,10 +66,12 @@ namespace Lean.Touch
             score = 0;
             wrongAnswers = 0;
             gameOver = false;
+            gameStarted = false;
             countdownTimer = 4f;
+            startTimer = 4f;
             pugCounter = 0;
             catCounter = 0;
-            paused = false;
+            bouncerPaused = false;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
             chooseAnimal();
@@ -72,29 +80,63 @@ namespace Lean.Touch
         // Update is called once per frame
         void Update()
         {
-            if (countdownTimer > 1 && (!gameOver))
+            if (!gameStarted)
             {
-                countdownTimer -= Time.deltaTime;
+                if (countdownTimer > 1 && (!gameOver))
+                {
+                    countdownTimer -= Time.deltaTime;
+                }
+
+                if (countdownTimer > 3)
+                {
+                    num3Image.enabled = true;
+                }
+                else if (countdownTimer > 2)
+                {
+                    num3Image.enabled = false;
+                    num2Image.enabled = true;
+                }
+                else if (countdownTimer > 1)
+                {
+                    num2Image.enabled = false;
+                    num1Image.enabled = true;
+                }
+                else
+                {
+                    num1Image.enabled = false;
+                    num0Image.enabled = true;
+                }
             }
-            if(countdownTimer > 3)
+            while (!gameStarted)
             {
-                num3Image.enabled = true;
+                if (startTimer > 0 && (!gameOver))
+                {
+                    startTimer -= Time.deltaTime;
+                }
+                if (startTimer > 3)
+                {
+                    startNum3Image.enabled = true;
+                }
+                else if (startTimer > 2)
+                {
+                    startNum3Image.enabled = false;
+                    startNum2Image.enabled = true;
+                }
+                else if (startTimer > 1)
+                {
+                    startNum2Image.enabled = false;
+                    startNum1Image.enabled = true;
+                }
+                else
+                {
+                    startNum1Image.enabled = false;
+                    StartCoroutine(goImagePopup());
+                    gameStarted = true;
+                }
             }
-            else if(countdownTimer > 2)
-            {
-                num3Image.enabled = false;
-                num2Image.enabled = true;
-            }
-            else if (countdownTimer > 1)
-            {
-                num2Image.enabled = false;
-                num1Image.enabled = true;
-            }
-            else
-            {
-                num1Image.enabled = false;
-                num0Image.enabled = true;
-            }
+            
+
+            
 
             switch(wrongAnswers)
             {
@@ -172,7 +214,7 @@ namespace Lean.Touch
             //if (InfoText != null)
             //{
             //    // Store the swipe delta in a temp variable
-            if (!paused)
+            if ((!bouncerPaused) && (gameStarted))
             {
                 var swipe = finger.SwipeScreenDelta;
                 if (wrongAnswers < 3)
@@ -260,6 +302,13 @@ namespace Lean.Touch
             neg100.enabled = false;  
         }
 
+        IEnumerator goImagePopup()
+        {
+            goImage.enabled = true;
+            yield return new WaitForSeconds(0.3f);
+            goImage.enabled = false;
+        }
+
         public void ResetLevel()
         {
             Start();
@@ -272,7 +321,7 @@ namespace Lean.Touch
 
         public void LoadPauseScene()
         {
-            paused = true;
+            bouncerPaused = true;
             Time.timeScale = 0;
             SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
         }

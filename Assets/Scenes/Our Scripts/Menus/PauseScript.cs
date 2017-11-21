@@ -17,12 +17,32 @@ public class PauseScript : MonoBehaviour {
 
     public void ResumeGame()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
+
         GameObject fingerSwipe = GameObject.Find("FingerSwipeObject");
         if (fingerSwipe != null)
         {
+            
             Lean.Touch.TinderScript tinderScript = fingerSwipe.GetComponent<Lean.Touch.TinderScript>();
-            tinderScript.paused = false;
+            
+            if (currentScene == "Bouncer Pug")
+            {
+                tinderScript.bouncerPaused = false;
+            }
+            
         }
+
+        GameObject pieTouch = GameObject.Find("PieTouch");
+        if(pieTouch != null)
+        {
+            Lean.Touch.SplatTheCatTouch splatScript = pieTouch.GetComponent<Lean.Touch.SplatTheCatTouch>();
+
+            if (currentScene == "Splat The Cat")
+            {
+                splatScript.splatTheCatPaused = false;
+            }
+        }
+
         Destroy(gameObject);
         Time.timeScale = 1;
         
