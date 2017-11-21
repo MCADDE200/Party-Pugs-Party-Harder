@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldenBoneScript : MonoBehaviour {
+//public class GoldenBoneScript : MonoBehaviour {
 
-    int score;
+//    int score;
 
-    bool pug;
+//    bool pug;
 
-    public Text scoreText;
+//    public Text scoreText;
 
-    public Image pos200;
+//    public Image pos200;
 
 
-    // Use this for initialization
-    void Start () {
+//    // Use this for initialization
+//    void Start () {
 		
-	}
+//	}
 	
-	// Update is called once per frame
-	void Update () {
-        scoreText.text = "Score: " + score;
-    }
-}
+//	// Update is called once per frame
+//	void Update () {
+//        scoreText.text = "Score: " + score;
+//    }
+//}

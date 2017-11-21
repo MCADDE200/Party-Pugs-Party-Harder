@@ -25,6 +25,8 @@ namespace Lean.Touch
         public GameObject mainMenuButton;
         public GameObject pauseButton;
 
+        public GameObject[] pugSkins;
+
         public Text scoreText;
 
         public Image pos100;
@@ -40,6 +42,8 @@ namespace Lean.Touch
 
         public AudioClip correctSound;
         public AudioClip wrongSound;
+
+        PugSelectionScript pugSelectionScript;
 
         private void Awake()
         {
@@ -74,6 +78,13 @@ namespace Lean.Touch
             bouncerPaused = false;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
+
+            //for (int i = 0; i < 11; i++)
+            //{
+            //    pugSkins[i].SetActive(false);
+            //}
+            //pugSkins[pugSelectionScript.selectedSkin].SetActive(true);
+
             chooseAnimal();
         }
 

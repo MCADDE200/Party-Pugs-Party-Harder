@@ -22455,6 +22455,18 @@ MonoBehaviour:
   resetLevelButton: {fileID: 1907689735}
   mainMenuButton: {fileID: 671432076}
   pauseButton: {fileID: 856130735}
+  pugSkins:
+  - {fileID: 53279836}
+  - {fileID: 1127625092}
+  - {fileID: 2146705913}
+  - {fileID: 628563300}
+  - {fileID: 1558419233}
+  - {fileID: 863101426}
+  - {fileID: 1171517778}
+  - {fileID: 1070122165}
+  - {fileID: 1335102768}
+  - {fileID: 1697807574}
+  - {fileID: 599472973}
   scoreText: {fileID: 660192647}
   pos100: {fileID: 883687828}
   neg100: {fileID: 343884666}

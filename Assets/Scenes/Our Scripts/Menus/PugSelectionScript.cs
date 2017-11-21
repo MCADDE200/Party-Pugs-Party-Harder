@@ -12,10 +12,13 @@ namespace Lean.Touch
         int index;
         public int selectedSkin;
 
+        //GameDataScript gameDataScript;
+
         // Use this for initialization
         void Start()
         {
             index = 7;
+            selectedSkin = 2;
         }
 
         protected virtual void OnEnable()
@@ -72,7 +75,7 @@ namespace Lean.Touch
 
         public void back()
         {
-            SceneManager.LoadScene("Tickets Menu");
+            SceneManager.LoadScene("Shop");
         }
 
         protected virtual void OnDisable()

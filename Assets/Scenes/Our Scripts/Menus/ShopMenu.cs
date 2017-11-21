@@ -25,4 +25,9 @@ public class ShopMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("TicketsMenu");
     }
+
+    public void LoadPugs()
+    {
+        SceneManager.LoadScene("Pug Selection Scene");
+    }
 }

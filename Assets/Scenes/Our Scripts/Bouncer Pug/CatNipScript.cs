@@ -25,17 +25,17 @@ public class CatNipScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if 
-        {
-            pug = true;
-            sound.PlayOneShot(Pug_Growl_01);
-        }
+        //if 
+        //{
+        //    pug = true;
+        //    sound.PlayOneShot(Pug_Growl_01);
+        //}
 
-        else
-        {
-            pug = false;
-            sound.PlayOneShot(Cat_Pug_02);
-        }
+        //else
+        //{
+        //    pug = false;
+        //    sound.PlayOneShot(Cat_Pug_02);
+        //}
 
     }
 }

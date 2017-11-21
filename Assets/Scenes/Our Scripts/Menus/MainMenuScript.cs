@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
         GameObject musicData = GameObject.Find("MusicObject");
@@ -14,6 +15,13 @@ public class MainMenuScript : MonoBehaviour {
             musicData = new GameObject("MusicObject");
             musicData.AddComponent<AudioSource>();
             musicData.AddComponent<MusicScript>();
+        }
+
+        GameObject gameData = GameObject.Find("GameData");
+        if (musicData == null)
+        {
+            gameData = new GameObject("GameData");
+            gameData.AddComponent<GameDataScript>();
         }
     }
 	
