@@ -10,15 +10,12 @@ namespace Lean.Touch
         public GameObject[] pugSkins;
         public GameObject selectButton;
         int index;
-        public int selectedSkin;
 
-        //GameDataScript gameDataScript;
 
         // Use this for initialization
         void Start()
         {
             index = 7;
-            selectedSkin = 2;
         }
 
         protected virtual void OnEnable()
@@ -70,7 +67,15 @@ namespace Lean.Touch
         
         public void selectPug()
         {
-            selectedSkin = index;
+            //gameDataScript.selectedSkin = index;
+
+            GameObject gameData = GameObject.Find("GameData");
+            if (gameData != null)
+            {
+                
+                gameData.GetComponent<GameDataScript>().selectedSkin = index;
+
+            }
         }
 
         public void back()

@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameDataScript : MonoBehaviour {
 
-    public int testInt;
+    public int selectedSkin;
 
-	// Use this for initialization
-	void Start () {
-        testInt = 0;
-	}
+
+    // Use this for initialization
+    void Start () {
+        DontDestroyOnLoad(this);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+
 }

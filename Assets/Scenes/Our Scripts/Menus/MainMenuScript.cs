@@ -18,7 +18,7 @@ public class MainMenuScript : MonoBehaviour {
         }
 
         GameObject gameData = GameObject.Find("GameData");
-        if (musicData == null)
+        if (gameData == null)
         {
             gameData = new GameObject("GameData");
             gameData.AddComponent<GameDataScript>();

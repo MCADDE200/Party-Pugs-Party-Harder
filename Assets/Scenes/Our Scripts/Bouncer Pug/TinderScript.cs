@@ -43,7 +43,7 @@ namespace Lean.Touch
         public AudioClip correctSound;
         public AudioClip wrongSound;
 
-        PugSelectionScript pugSelectionScript;
+        //GameDataScript gameDataScript;
 
         private void Awake()
         {
@@ -79,11 +79,16 @@ namespace Lean.Touch
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
 
-            //for (int i = 0; i < 11; i++)
-            //{
-            //    pugSkins[i].SetActive(false);
-            //}
-            //pugSkins[pugSelectionScript.selectedSkin].SetActive(true);
+            for (int i = 0; i < 11; i++)
+            {
+                pugSkins[i].SetActive(false);
+            }
+            GameObject gameData = GameObject.Find("GameData");
+            if (gameData != null)
+            {
+                pugSkins[gameData.GetComponent<GameDataScript>().selectedSkin].SetActive(true) ;
+            }
+            //pugSkins[gameDataScript.selectedSkin].SetActive(true);
 
             chooseAnimal();
         }
