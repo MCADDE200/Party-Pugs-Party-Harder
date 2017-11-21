@@ -26,6 +26,7 @@ namespace Lean.Touch
         public GameObject pauseButton;
 
         public GameObject[] pugSkins;
+        public GameObject[] pugCatArray;
 
         public Text scoreText;
 
@@ -66,18 +67,27 @@ namespace Lean.Touch
             pos100.enabled = false;
             neg100.enabled = false;
             gameOverImg.enabled = false;
+
             counter = 0;
             score = 0;
             wrongAnswers = 0;
+
             gameOver = false;
             gameStarted = false;
+
             countdownTimer = 4f;
             startTimer = 4f;
             pugCounter = 0;
             catCounter = 0;
+
             bouncerPaused = false;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
+
+            for (int i = 0; i < 11; i++)
+            {
+
+            }
 
             for (int i = 0; i < 11; i++)
             {
@@ -210,6 +220,11 @@ namespace Lean.Touch
                     catCounter++;
                 }
             }
+        }
+
+        void populateList()
+        {
+
         }
 
         protected virtual void OnEnable()
