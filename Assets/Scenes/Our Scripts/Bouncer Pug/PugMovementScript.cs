@@ -6,7 +6,7 @@ public class PugMovementScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //RotatePug();
+        RotatePug();
 	}
 	
 	// Update is called once per frame
@@ -16,6 +16,6 @@ public class PugMovementScript : MonoBehaviour {
 
     public void RotatePug()
     {
-        //this.transform.Rotate(Vector3.up, -90);
+        this.transform.Rotate(Vector3.up, -90);
     }
 }
