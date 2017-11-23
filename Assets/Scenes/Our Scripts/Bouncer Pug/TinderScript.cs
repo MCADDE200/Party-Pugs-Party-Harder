@@ -87,8 +87,9 @@ namespace Lean.Touch
             bouncerPaused = false;
             resetLevelButton.SetActive(false);
             mainMenuButton.SetActive(false);
+            pauseButton.SetActive(true);
 
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 isPug.Add(false);
             }
@@ -208,13 +209,13 @@ namespace Lean.Touch
 
             if (isPug[9] == true)
             {
-                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 10)], pos.transform);
+                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 46)], pos.transform);
                 pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - 9);
                 pugTest.name = "PugTest" + (counter + 9);
             }
             else
             {
-                GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                GameObject catTest = Instantiate(catArray[Random.Range(0, 9)], pos.transform);
                 catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - 9);
                 catTest.name = "CatTest" + (counter + 9);
             }
@@ -226,13 +227,13 @@ namespace Lean.Touch
             {
                 if (isPug[i] == true)
                 {
-                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 10)], pos.transform);
+                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 46)], pos.transform);
                     pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - i);
                     pugTest.name = "PugTest" + i;
                 }
                 else
                 {
-                    GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                    GameObject catTest = Instantiate(catArray[Random.Range(0, 9)], pos.transform);
                     catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - i);
                     catTest.name = "CatTest" + i;
                 }
@@ -447,6 +448,7 @@ namespace Lean.Touch
         {
             bouncerPaused = true;
             Time.timeScale = 0;
+            pauseButton.SetActive(false);
             SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
         }
     }

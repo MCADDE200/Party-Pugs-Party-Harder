@@ -28,6 +28,7 @@ public class PauseScript : MonoBehaviour {
             if (currentScene == "Bouncer Pug")
             {
                 tinderScript.bouncerPaused = false;
+                tinderScript.pauseButton.SetActive(true);
             }
             
         }

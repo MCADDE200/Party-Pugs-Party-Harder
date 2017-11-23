@@ -22309,7 +22309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &978598610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22509,7 +22509,6 @@ MonoBehaviour:
   - {fileID: 1697807574}
   - {fileID: 599472973}
   pugArray:
-  - {fileID: 186312, guid: 911e29c5404e28245a77c56efa6b614c, type: 2}
   - {fileID: 186312, guid: ee7e5b0bb547c634ab6b86b456342ec4, type: 2}
   - {fileID: 186312, guid: 6c3f396ef30b806409b4e5071632fb69, type: 2}
   - {fileID: 186312, guid: 1f488f40b4e000443b6759fbe8d4ae91, type: 2}
@@ -22542,8 +22541,6 @@ MonoBehaviour:
   - {fileID: 186312, guid: 2bea710669a18bd4b9c3d48a251b36a5, type: 2}
   - {fileID: 186312, guid: f3493e829ba93ab41a1aada11bd309f2, type: 2}
   - {fileID: 186312, guid: db1ef30569bf97142b070e4c01bb1fde, type: 2}
-  - {fileID: 186312, guid: e5e3ce6f021a41c44a2482d34d0f4744, type: 2}
-  - {fileID: 186312, guid: 0558c1e237d548e4b8b5321e4a51e50b, type: 2}
   - {fileID: 186312, guid: f8a28f6abd46f3843aaa655b0fdb93c0, type: 2}
   - {fileID: 186312, guid: 9d7afb611a0a5de438651b78e150f86a, type: 2}
   - {fileID: 186312, guid: 1bfc55b568ec85849aa8420a7f7b1a2a, type: 2}

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PugMovementScript : MonoBehaviour {
 
+    public GameObject rightWaypoint;
+
+
+
 	// Use this for initialization
 	void Start () {
         RotatePug();
@@ -16,6 +20,6 @@ public class PugMovementScript : MonoBehaviour {
 
     public void RotatePug()
     {
-        this.transform.Rotate(Vector3.up, -90);
+       
     }
 }
