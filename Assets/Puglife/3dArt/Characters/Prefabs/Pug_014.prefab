@@ -731,11 +731,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 445632}
-  - component: {fileID: 11487310}
   - component: {fileID: 6571068}
-  - component: {fileID: 11420166}
-  - component: {fileID: 11452394}
-  - component: {fileID: 11476920}
   m_Layer: 0
   m_Name: Pug_014
   m_TagString: unit
@@ -3381,70 +3377,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11420166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e5906f5396d8c44901caa5293d0abd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitType: 1
-  footstepAudio: {fileID: 0}
-  isTurnComplete: 0
-  maxTurns: 1
-  distance_to_travel: 1.25
-  turnsTaken: 0
-  isMoving: 0
-  lerpDestination: {x: 0, y: 0, z: 0}
-  lerpStart: {x: 0, y: 0, z: 0}
-  currentTileType: 0
-  beenInSandpit: 0
-  activePowerups: 
-  animator: {fileID: 9566128}
---- !u!114 &11452394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3185439eb86f627478c6177347dbf83b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11476920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081675852e399c242ac57461ee1f3b3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 0
-  limit: 25
-  distance: 0
-  isPlayerPug: 1
---- !u!114 &11487310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50548c359b37ba146bcc959bd81782c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heightMultiplier: 0.1
-  frequencyMultiplier: 10
-  StartBouncing: 0
 --- !u!119 &11967172
 Projector:
   m_ObjectHideFlags: 1
