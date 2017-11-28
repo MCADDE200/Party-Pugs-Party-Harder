@@ -277,12 +277,12 @@ namespace Lean.Touch
                 if (GameObject.Find("PugTest" + offset) != null)
                 {
                     GameObject temp = GameObject.Find("PugTest" + offset);
-                    newPosPug[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z + 1);
+                    newPosPug[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, Mathf.Ceil(temp.transform.position.z + 1));
                 }
                 if (GameObject.Find("CatTest" + offset) != null)
                 {
                     GameObject temp = GameObject.Find("CatTest" + offset);
-                    newPosCat[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z + 1);
+                    newPosCat[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, Mathf.Ceil(temp.transform.position.z + 1));
                 }
             }
             lerp = true;
