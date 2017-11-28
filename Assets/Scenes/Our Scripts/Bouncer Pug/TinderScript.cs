@@ -212,6 +212,7 @@ namespace Lean.Touch
             isPug.RemoveAt(0);
 
             //MoveForwards();
+            //LerpPos();
 
             ChooseAnimal();
 
@@ -270,7 +271,7 @@ namespace Lean.Touch
 
         void LerpPos()
         {
-            for (int i = 0; i < (isPug.Count + 1); i++)
+            for (int i = 0; i < (isPug.Count - 1); i++)
             {
                 int offset = i + counter;
                 if (GameObject.Find("PugTest" + offset) != null)
@@ -289,7 +290,7 @@ namespace Lean.Touch
 
         void MoveForward()
         {
-            for (int i = 0; i < (isPug.Count + 1); i++)
+            for (int i = 0; i < (isPug.Count - 1); i++)
             {
                 int offset = i + counter;
                 if (GameObject.Find("PugTest" + offset) != null)
