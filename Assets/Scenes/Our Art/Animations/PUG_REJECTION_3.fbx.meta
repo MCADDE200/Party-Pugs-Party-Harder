@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: 57bec2291a010954b8e0e00d3fe1c6f0
+timeCreated: 1512037412
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: RIGGEDPUG_Newest:Base_Joint
+    100004: RIGGEDPUG_Newest:Head_Joint
+    100006: RIGGEDPUG_Newest:Left_BackLeg1
+    100008: RIGGEDPUG_Newest:Left_BackLeg2
+    100010: RIGGEDPUG_Newest:Left_BackLeg3
+    100012: RIGGEDPUG_Newest:Left_BackToe
+    100014: RIGGEDPUG_Newest:Left_FrontLeg1
+    100016: RIGGEDPUG_Newest:Left_FrontLeg2
+    100018: RIGGEDPUG_Newest:Left_FrontLeg3
+    100020: RIGGEDPUG_Newest:Left_FrontToe
+    100022: RIGGEDPUG_Newest:Nose
+    100024: RIGGEDPUG_Newest:Pug
+    100026: RIGGEDPUG_Newest:Right_BackLeg1
+    100028: RIGGEDPUG_Newest:Right_BackLeg2
+    100030: RIGGEDPUG_Newest:Right_BackLeg3
+    100032: RIGGEDPUG_Newest:Right_BackToe
+    100034: RIGGEDPUG_Newest:Right_FrontLeg1
+    100036: RIGGEDPUG_Newest:Right_FrontLeg2
+    100038: RIGGEDPUG_Newest:Right_FrontLeg3
+    100040: RIGGEDPUG_Newest:Right_FrontToe
+    100042: RIGGEDPUG_Newest:Spine_1
+    100044: RIGGEDPUG_Newest:Spine_2
+    100046: RIGGEDPUG_Newest:Spine_3
+    100048: RIGGEDPUG_Newest:Stomach
+    100050: RIGGEDPUG_Newest:TailBone_1
+    100052: RIGGEDPUG_Newest:TailBone_2
+    100054: RIGGEDPUG_Newest:TailBone_3
+    100056: RIGGEDPUG_Newest:TailBone_4
+    400000: //RootNode
+    400002: RIGGEDPUG_Newest:Base_Joint
+    400004: RIGGEDPUG_Newest:Head_Joint
+    400006: RIGGEDPUG_Newest:Left_BackLeg1
+    400008: RIGGEDPUG_Newest:Left_BackLeg2
+    400010: RIGGEDPUG_Newest:Left_BackLeg3
+    400012: RIGGEDPUG_Newest:Left_BackToe
+    400014: RIGGEDPUG_Newest:Left_FrontLeg1
+    400016: RIGGEDPUG_Newest:Left_FrontLeg2
+    400018: RIGGEDPUG_Newest:Left_FrontLeg3
+    400020: RIGGEDPUG_Newest:Left_FrontToe
+    400022: RIGGEDPUG_Newest:Nose
+    400024: RIGGEDPUG_Newest:Pug
+    400026: RIGGEDPUG_Newest:Right_BackLeg1
+    400028: RIGGEDPUG_Newest:Right_BackLeg2
+    400030: RIGGEDPUG_Newest:Right_BackLeg3
+    400032: RIGGEDPUG_Newest:Right_BackToe
+    400034: RIGGEDPUG_Newest:Right_FrontLeg1
+    400036: RIGGEDPUG_Newest:Right_FrontLeg2
+    400038: RIGGEDPUG_Newest:Right_FrontLeg3
+    400040: RIGGEDPUG_Newest:Right_FrontToe
+    400042: RIGGEDPUG_Newest:Spine_1
+    400044: RIGGEDPUG_Newest:Spine_2
+    400046: RIGGEDPUG_Newest:Spine_3
+    400048: RIGGEDPUG_Newest:Stomach
+    400050: RIGGEDPUG_Newest:TailBone_1
+    400052: RIGGEDPUG_Newest:TailBone_2
+    400054: RIGGEDPUG_Newest:TailBone_3
+    400056: RIGGEDPUG_Newest:TailBone_4
+    4300000: RIGGEDPUG_Newest:Pug
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: RIGGEDPUG_Newest:Pug
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
