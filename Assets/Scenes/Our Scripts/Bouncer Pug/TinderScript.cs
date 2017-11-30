@@ -467,6 +467,7 @@ namespace Lean.Touch
                 score -= 100;
                 sound.PlayOneShot(wrongSound);
                 wrongAnswers++;
+                Handheld.Vibrate();
             }
             yield return new WaitForSeconds(0.5f);
             pos100.enabled = false;
