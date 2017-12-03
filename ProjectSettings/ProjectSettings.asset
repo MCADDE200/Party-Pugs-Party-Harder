@@ -218,9 +218,12 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   AndroidKeystoreName: D:/WeeMa/Documents/Third Year Uni/Pre-Production/GitHub/Party-Pugs-Party-Harder/KeyStore/NewPartyPugs.keystore
   AndroidKeyaliasName: partypugs
 =======
+=======
+>>>>>>> 6868fc8f3edc7a82f4384dd81d4d38f54a181cd4
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
 >>>>>>> 6868fc8f3edc7a82f4384dd81d4d38f54a181cd4
