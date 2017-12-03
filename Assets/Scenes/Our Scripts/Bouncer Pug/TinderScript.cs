@@ -28,6 +28,10 @@ namespace Lean.Touch
         public GameObject mainMenuButton;
         public GameObject pauseButton;
         public GameObject pos;
+        //TESTING ONLY 
+        public GameObject rightPos;
+        public GameObject leftPos;
+
         GameObject pugTest;
         GameObject catTest;
 
@@ -213,6 +217,7 @@ namespace Lean.Touch
 
             //MoveForwards();
             //LerpPos();
+            //LerpRight();
 
             ChooseAnimal();
 
@@ -224,7 +229,7 @@ namespace Lean.Touch
             }
             else
             {
-                GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                GameObject catTest = Instantiate(catArray[Random.Range(0, 2)], pos.transform);
                 catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - 9);
                 catTest.name = "CatTest" + (counter + 9);
             }
@@ -243,7 +248,7 @@ namespace Lean.Touch
                 }
                 else
                 {
-                    GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                    GameObject catTest = Instantiate(catArray[Random.Range(0, 2)], pos.transform);
                     catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - i);
                     catTest.name = "CatTest" + i;
                 }
@@ -277,12 +282,12 @@ namespace Lean.Touch
                 if (GameObject.Find("PugTest" + offset) != null)
                 {
                     GameObject temp = GameObject.Find("PugTest" + offset);
-                    newPosPug[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z + 1);
+                    newPosPug[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, Mathf.Ceil(temp.transform.position.z + 1));
                 }
                 if (GameObject.Find("CatTest" + offset) != null)
                 {
                     GameObject temp = GameObject.Find("CatTest" + offset);
-                    newPosCat[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, temp.transform.position.z + 1);
+                    newPosCat[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, Mathf.Ceil(temp.transform.position.z + 1));
                 }
             }
             lerp = true;
@@ -309,6 +314,20 @@ namespace Lean.Touch
                         temp.transform.position = Vector3.Lerp(temp.transform.position, newPosCat[offset], Time.deltaTime * lerpSpeed);
                     }
                 }
+            }
+        }
+
+        void LerpRight()
+        {
+            if (GameObject.Find("PugTest" + counter) != null)
+            {
+                GameObject temp = GameObject.Find("PugTest" + counter);
+                temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
+            }
+            if (GameObject.Find("CatTest" + counter) != null)
+            {
+                GameObject temp = GameObject.Find("CatTest" + counter);
+                temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
             }
         }
 
@@ -467,6 +486,7 @@ namespace Lean.Touch
                 score -= 100;
                 sound.PlayOneShot(wrongSound);
                 wrongAnswers++;
+                Handheld.Vibrate();
             }
             yield return new WaitForSeconds(0.5f);
             pos100.enabled = false;

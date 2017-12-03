@@ -1,31 +1,33 @@
 fileFormatVersion: 2
-guid: 2d2d8aa4ecb639a4287e5872e62e37e5
-timeCreated: 1511864834
-licenseType: Free
+guid: ac3116eace4247b4c97fdad8110b12d0
+timeCreated: 1512038475
+licenseType: Pro
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: ikhandle_backleft
-    100002: ikhandle_backright
-    100004: ikhandle_frontleft
-    100006: ikhandle_rightfront
-    100008: nurbs_backleft
-    100010: nurbs_backright
-    100012: nurbs_frontleft
-    100014: nurbs_frontright
-    100016: //RootNode
-    100018: RIGGEDPUGRNfosterParent1
-    400000: ikhandle_backleft
-    400002: ikhandle_backright
-    400004: ikhandle_frontleft
-    400006: ikhandle_rightfront
-    400008: nurbs_backleft
-    400010: nurbs_backright
-    400012: nurbs_frontleft
-    400014: nurbs_frontright
-    400016: //RootNode
-    400018: RIGGEDPUGRNfosterParent1
-    9500000: //RootNode
+    100000: //RootNode
+    100002: nocats_sign
+    100004: pCube1
+    100006: pCube2
+    100008: pCube3
+    100010: pCube4
+    100012: transform1
+    100014: transform2
+    100016: transform3
+    100018: transform4
+    400000: //RootNode
+    400002: nocats_sign
+    400004: pCube1
+    400006: pCube2
+    400008: pCube3
+    400010: pCube4
+    400012: transform1
+    400014: transform2
+    400016: transform3
+    400018: transform4
+    2300000: pCube4
+    3300000: pCube4
+    4300000: pCube4
   materials:
     importMaterials: 1
     materialName: 0
@@ -95,7 +97,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 40316423ca7d9264494cabbcb6b09d37
+timeCreated: 1512037412
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: RIGGEDPUG_Newest:Base_Joint
+    100004: RIGGEDPUG_Newest:curve4
+    100006: RIGGEDPUG_Newest:frontleg_left
+    100008: RIGGEDPUG_Newest:frontleg_left1
+    100010: RIGGEDPUG_Newest:frontleg_left2
+    100012: RIGGEDPUG_Newest:frontleg_left3
+    100014: RIGGEDPUG_Newest:Head_Joint
+    100016: RIGGEDPUG_Newest:ikHandle1
+    100018: RIGGEDPUG_Newest:ikHandle2
+    100020: RIGGEDPUG_Newest:ikHandle3
+    100022: RIGGEDPUG_Newest:ikHandle4
+    100024: RIGGEDPUG_Newest:ikHandle5
+    100026: RIGGEDPUG_Newest:ikHandle6
+    100028: RIGGEDPUG_Newest:Left_BackLeg1
+    100030: RIGGEDPUG_Newest:Left_BackLeg2
+    100032: RIGGEDPUG_Newest:Left_BackLeg3
+    100034: RIGGEDPUG_Newest:Left_BackToe
+    100036: RIGGEDPUG_Newest:Left_FrontLeg1
+    100038: RIGGEDPUG_Newest:Left_FrontLeg2
+    100040: RIGGEDPUG_Newest:Left_FrontLeg3
+    100042: RIGGEDPUG_Newest:Left_FrontToe
+    100044: RIGGEDPUG_Newest:Nose
+    100046: RIGGEDPUG_Newest:nurbsCircle1
+    100048: RIGGEDPUG_Newest:nurbsCircle2
+    100050: RIGGEDPUG_Newest:Pug
+    100052: RIGGEDPUG_Newest:Right_BackLeg1
+    100054: RIGGEDPUG_Newest:Right_BackLeg2
+    100056: RIGGEDPUG_Newest:Right_BackLeg3
+    100058: RIGGEDPUG_Newest:Right_BackToe
+    100060: RIGGEDPUG_Newest:Right_FrontLeg1
+    100062: RIGGEDPUG_Newest:Right_FrontLeg2
+    100064: RIGGEDPUG_Newest:Right_FrontLeg3
+    100066: RIGGEDPUG_Newest:Right_FrontToe
+    100068: RIGGEDPUG_Newest:Spine_1
+    100070: RIGGEDPUG_Newest:Spine_2
+    100072: RIGGEDPUG_Newest:Spine_3
+    100074: RIGGEDPUG_Newest:Stomach
+    100076: RIGGEDPUG_Newest:TailBone_1
+    100078: RIGGEDPUG_Newest:TailBone_2
+    100080: RIGGEDPUG_Newest:TailBone_3
+    100082: RIGGEDPUG_Newest:TailBone_4
+    400000: //RootNode
+    400002: RIGGEDPUG_Newest:Base_Joint
+    400004: RIGGEDPUG_Newest:curve4
+    400006: RIGGEDPUG_Newest:frontleg_left
+    400008: RIGGEDPUG_Newest:frontleg_left1
+    400010: RIGGEDPUG_Newest:frontleg_left2
+    400012: RIGGEDPUG_Newest:frontleg_left3
+    400014: RIGGEDPUG_Newest:Head_Joint
+    400016: RIGGEDPUG_Newest:ikHandle1
+    400018: RIGGEDPUG_Newest:ikHandle2
+    400020: RIGGEDPUG_Newest:ikHandle3
+    400022: RIGGEDPUG_Newest:ikHandle4
+    400024: RIGGEDPUG_Newest:ikHandle5
+    400026: RIGGEDPUG_Newest:ikHandle6
+    400028: RIGGEDPUG_Newest:Left_BackLeg1
+    400030: RIGGEDPUG_Newest:Left_BackLeg2
+    400032: RIGGEDPUG_Newest:Left_BackLeg3
+    400034: RIGGEDPUG_Newest:Left_BackToe
+    400036: RIGGEDPUG_Newest:Left_FrontLeg1
+    400038: RIGGEDPUG_Newest:Left_FrontLeg2
+    400040: RIGGEDPUG_Newest:Left_FrontLeg3
+    400042: RIGGEDPUG_Newest:Left_FrontToe
+    400044: RIGGEDPUG_Newest:Nose
+    400046: RIGGEDPUG_Newest:nurbsCircle1
+    400048: RIGGEDPUG_Newest:nurbsCircle2
+    400050: RIGGEDPUG_Newest:Pug
+    400052: RIGGEDPUG_Newest:Right_BackLeg1
+    400054: RIGGEDPUG_Newest:Right_BackLeg2
+    400056: RIGGEDPUG_Newest:Right_BackLeg3
+    400058: RIGGEDPUG_Newest:Right_BackToe
+    400060: RIGGEDPUG_Newest:Right_FrontLeg1
+    400062: RIGGEDPUG_Newest:Right_FrontLeg2
+    400064: RIGGEDPUG_Newest:Right_FrontLeg3
+    400066: RIGGEDPUG_Newest:Right_FrontToe
+    400068: RIGGEDPUG_Newest:Spine_1
+    400070: RIGGEDPUG_Newest:Spine_2
+    400072: RIGGEDPUG_Newest:Spine_3
+    400074: RIGGEDPUG_Newest:Stomach
+    400076: RIGGEDPUG_Newest:TailBone_1
+    400078: RIGGEDPUG_Newest:TailBone_2
+    400080: RIGGEDPUG_Newest:TailBone_3
+    400082: RIGGEDPUG_Newest:TailBone_4
+    4300000: RIGGEDPUG_Newest:Pug
+    9500000: //RootNode
+    13700000: RIGGEDPUG_Newest:Pug
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
