@@ -311,6 +311,12 @@ namespace Lean.Touch
                     if (temp.transform.position != newPosPug[offset])
                     {
                         temp.transform.position = Vector3.Lerp(temp.transform.position, newPosPug[offset], Time.deltaTime * lerpSpeed);
+                        if(temp.transform.position == newPosPug[offset])
+                        {
+                            lerp = false;
+                            state = 2;
+                            AnimatePugs(state);
+                        }
                     }
                 }
                 if (GameObject.Find("CatTest" + offset) != null)
@@ -319,6 +325,12 @@ namespace Lean.Touch
                     if (temp.transform.position != newPosCat[offset])
                     {
                         temp.transform.position = Vector3.Lerp(temp.transform.position, newPosCat[offset], Time.deltaTime * lerpSpeed);
+                        if (temp.transform.position == newPosCat[offset])
+                        {
+                            lerp = false;
+                            state = 2;
+                            AnimatePugs(state);
+                        }
                     }
                 }
             }
