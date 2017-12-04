@@ -4,13 +4,13 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: d7f44bd4e2d943f448f35e2ed1a4d8db
+  productGUID: 8dd3c5b022a26ef47adb1d1f8a272c58
   AndroidProfiler: 0
-  defaultScreenOrientation: 0
+  defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: JusticeForConall
+  companyName: DefaultCompany
   productName: Party-Pugs-Party-Harder
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -140,8 +140,7 @@ PlayerSettings:
   useHDRDisplay: 0
   targetPixelDensity: 0
   resolutionScalingMode: 0
-  applicationIdentifier:
-    Android: com.JusticeForConall.PPPH
+  applicationIdentifier: {}
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -161,7 +160,7 @@ PlayerSettings:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 7.0
+  iOSTargetOSVersionString: 
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 
@@ -217,17 +216,9 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  AndroidKeystoreName: D:/WeeMa/Documents/Third Year Uni/Pre-Production/GitHub/Party-Pugs-Party-Harder/KeyStore/NewPartyPugs.keystore
-  AndroidKeyaliasName: partypugs
-=======
-=======
->>>>>>> 6868fc8f3edc7a82f4384dd81d4d38f54a181cd4
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
->>>>>>> 6868fc8f3edc7a82f4384dd81d4d38f54a181cd4
-  AndroidTVCompatibility: 0
+  AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
   m_AndroidBanners:

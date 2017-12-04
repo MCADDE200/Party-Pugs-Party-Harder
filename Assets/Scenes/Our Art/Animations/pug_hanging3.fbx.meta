@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: f0f66eefba5213c41bbc544c8765fb8e
-timeCreated: 1512037413
-licenseType: Pro
+guid: bdea51ea7640bcb4f98c3797a58de38a
+timeCreated: 1512344571
+licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -90,6 +90,7 @@ ModelImporter:
     400080: RIGGEDPUG_Newest:TailBone_3
     400082: RIGGEDPUG_Newest:TailBone_4
     4300000: RIGGEDPUG_Newest:Pug
+    7400000: Take 001
     9500000: //RootNode
     13700000: RIGGEDPUG_Newest:Pug
   materials:

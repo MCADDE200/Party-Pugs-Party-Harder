@@ -18,6 +18,7 @@ namespace Lean.Touch
         bool gameOver;
         bool gameStarted;
         bool lerp;
+        int state;
         public bool bouncerPaused;
 
         List<bool> isPug = new List<bool>();
@@ -57,6 +58,7 @@ namespace Lean.Touch
         public int lerpSpeed = 6;
 
         AudioSource sound;
+        Animator anim;
 
         public AudioClip correctSound;
         public AudioClip wrongSound;
@@ -156,6 +158,7 @@ namespace Lean.Touch
                 if (lerp)
                 {
                     MoveForward();
+                    AnimatePugs(state);
                 }
             }
             if (!gameStarted)
@@ -223,7 +226,7 @@ namespace Lean.Touch
 
             if (isPug[9] == true)
             {
-                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 46)], pos.transform);
+                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 3)], pos.transform);
                 pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - 9);
                 pugTest.name = "PugTest" + (counter + 9);
             }
@@ -242,7 +245,7 @@ namespace Lean.Touch
             {
                 if (isPug[i] == true)
                 {
-                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 46)], pos.transform);
+                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 3)], pos.transform);
                     pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - i);
                     pugTest.name = "PugTest" + i;
                 }
@@ -290,7 +293,11 @@ namespace Lean.Touch
                     newPosCat[offset] = new Vector3(temp.transform.position.x, temp.transform.position.y, Mathf.Ceil(temp.transform.position.z + 1));
                 }
             }
+            state = 1;
+            //AnimatePugs(state);
             lerp = true;
+            //MoveForward();
+            
         }
 
         void MoveForward()
@@ -315,19 +322,87 @@ namespace Lean.Touch
                     }
                 }
             }
+            //lerp = false;
+            //state = 2;
+            //AnimatePugs(state);
         }
 
-        void LerpRight()
+        void AnimatePugs(int state)
         {
-            if (GameObject.Find("PugTest" + counter) != null)
+            if (state == 1)
             {
-                GameObject temp = GameObject.Find("PugTest" + counter);
-                temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
+                Debug.Log("State Correct");
+                for (int i = 0; i < (isPug.Count - 1); i++)
+                {
+                    int offset = i + counter;
+                    if (GameObject.Find("PugTest" + offset) != null)
+                    {
+                        GameObject temp = GameObject.Find("PugTest" + offset);
+                        anim = temp.GetComponentInChildren<Animator>();
+                        anim.SetBool("Walking", true);
+                        Debug.Log("Bool Set");
+                    }
+                    if (GameObject.Find("CatTest" + offset) != null)
+                    {
+                        GameObject temp = GameObject.Find("CatTest" + offset);
+                        if (temp.transform.position != newPosCat[offset])
+                        {
+                            temp.transform.position = Vector3.Lerp(temp.transform.position, newPosCat[offset], Time.deltaTime * lerpSpeed);
+                        }
+                    }
+                }
             }
-            if (GameObject.Find("CatTest" + counter) != null)
+            if(state == 2)
             {
-                GameObject temp = GameObject.Find("CatTest" + counter);
-                temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
+                for (int i = 0; i < (isPug.Count - 1); i++)
+                {
+                    int offset = i + counter;
+                    if (GameObject.Find("PugTest" + offset) != null)
+                    {
+                        GameObject temp = GameObject.Find("PugTest" + offset);
+                        anim = temp.GetComponentInChildren<Animator>();
+                        anim.SetBool("Walking", false);
+                    }
+                    if (GameObject.Find("CatTest" + offset) != null)
+                    {
+                        GameObject temp = GameObject.Find("CatTest" + offset);
+                        if (temp.transform.position != newPosCat[offset])
+                        {
+                            temp.transform.position = Vector3.Lerp(temp.transform.position, newPosCat[offset], Time.deltaTime * lerpSpeed);
+                        }
+                    }
+                }
+            }
+            //state = 0;
+        }
+
+        void LerpFinal(bool dir)
+        {
+            if (dir)
+            {
+                if (GameObject.Find("PugTest" + (counter - 1)) != null)
+                {
+                    GameObject temp = GameObject.Find("PugTest" + counter);
+                    temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
+                }
+                if (GameObject.Find("CatTest" + (counter - 1)) != null)
+                {
+                    GameObject temp = GameObject.Find("CatTest" + counter);
+                    temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
+                }
+            }
+            else if(!dir)
+            {
+                if (GameObject.Find("PugTest" + (counter - 1)) != null)
+                {
+                    GameObject temp = GameObject.Find("PugTest" + counter);
+                    temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
+                }
+                if (GameObject.Find("CatTest" + (counter - 1)) != null)
+                {
+                    GameObject temp = GameObject.Find("CatTest" + counter);
+                    temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
+                }
             }
         }
 
@@ -413,6 +488,7 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = true;
                             StartCoroutine(scorePopup(a));
+                            //LerpFinal(isPug[0]);
 
                         }
                         else
@@ -421,6 +497,7 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = false;
                             StartCoroutine(scorePopup(a));
+                            //LerpFinal(isPug[0]);
                         }
                     }
 
@@ -433,6 +510,7 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = true;
                             StartCoroutine(scorePopup(a));
+                            //LerpFinal(isPug[0]);
                         }
                         else
                         {
@@ -440,6 +518,7 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = false;
                             StartCoroutine(scorePopup(a));
+                            //LerpFinal(isPug[0]);
                         }
                     }
                 }
