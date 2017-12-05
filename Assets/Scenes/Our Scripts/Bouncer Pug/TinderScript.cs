@@ -283,13 +283,13 @@ namespace Lean.Touch
 
             if (isPug[9] == true)
             {
-                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 3)], pos.transform);
+                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 41)], pos.transform);
                 pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - 9);
                 pugTest.name = "PugTest" + (counter + 9);
             }
             else
             {
-                GameObject catTest = Instantiate(catArray[Random.Range(0, 2)], pos.transform);
+                GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
                 catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - 9);
                 catTest.name = "CatTest" + (counter + 9);
             }
@@ -302,13 +302,13 @@ namespace Lean.Touch
             {
                 if (isPug[i] == true)
                 {
-                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 3)], pos.transform);
+                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 41)], pos.transform);
                     pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - i);
                     pugTest.name = "PugTest" + i;
                 }
                 else
                 {
-                    GameObject catTest = Instantiate(catArray[Random.Range(0, 2)], pos.transform);
+                    GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
                     catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - i);
                     catTest.name = "CatTest" + i;
                 }
@@ -451,24 +451,24 @@ namespace Lean.Touch
                 {
                     GameObject temp = GameObject.Find("PugTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
-                    Debug.Log("PugTest" + (counter-1));
+                    //Debug.Log("PugTest" + (counter-1));
                     if (temp.transform.position == rightPos.transform.position)
                     {
-                        Debug.Log("trqq go disablene");
+                        //Debug.Log("trqq go disablene");
                         leftRightLerp = false;
-                        Destroy(temp);
+                        //Destroy(temp);
                     }
                 }
                 if (GameObject.Find("CatTest" + (counter - 1)) != null)
                 {
                     GameObject temp = GameObject.Find("CatTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
-                    Debug.Log("CatTest" + (counter-1));
+                    //Debug.Log("CatTest" + (counter-1));
                     if (temp.transform.position == rightPos.transform.position)
                     {
-                        Debug.Log("trqq go disablene");
+                        //Debug.Log("trqq go disablene");
                         leftRightLerp = false;
-                        Destroy(temp);
+                        //Destroy(temp);
                     }
                 }
 
@@ -479,24 +479,22 @@ namespace Lean.Touch
                 {
                     GameObject temp = GameObject.Find("PugTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
-                    Debug.Log("PugTest" + (counter-1));
+                    //Debug.Log("PugTest" + (counter-1));
                     if (temp.transform.position == leftPos.transform.position)
                     {
-                        Debug.Log("trqq go disablene");
                         leftRightLerp = false;
-                        Destroy(temp);
+                        //Destroy(temp);
                     }
                 }
                 if (GameObject.Find("CatTest" + (counter - 1)) != null)
                 {
                     GameObject temp = GameObject.Find("CatTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
-                    Debug.Log("CatTest" + (counter-1));
+                    //Debug.Log("CatTest" + (counter-1));
                     if (temp.transform.position == leftPos.transform.position)
                     {
-                        Debug.Log("trqq go disablene");
                         leftRightLerp = false;
-                        Destroy(temp);
+                        //Destroy(temp);
                     }
                 }
             }
@@ -687,6 +685,12 @@ namespace Lean.Touch
                 int offset = i + counter;
                 Destroy(GameObject.Find("PugTest" + offset));
                 Destroy(GameObject.Find("CatTest" + offset));
+            }
+            for (int i = 0; i < (isPug.Count + 1); i++)
+            {
+                //int offset = i + counter;
+                Destroy(GameObject.Find("PugTest" + i));
+                Destroy(GameObject.Find("CatTest" + i));
             }
             isPug.Clear();
             Start();

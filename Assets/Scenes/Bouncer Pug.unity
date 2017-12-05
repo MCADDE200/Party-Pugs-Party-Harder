@@ -17371,7 +17371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 719967164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.51, y: 0, z: -0.83}
+  m_LocalPosition: {x: 18.25, y: 0, z: -0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1205532790}
@@ -17531,7 +17531,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 725138430}
   m_LocalRotation: {x: 0, y: 0.9961947, z: -0.08715578, w: 0}
-  m_LocalPosition: {x: 0.865, y: 1.265, z: 2.62}
+  m_LocalPosition: {x: 0.865, y: 1.265, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20761,15 +20761,11 @@ MonoBehaviour:
   - {fileID: 186312, guid: 9d7584fc0be0f7c4993311c6ab9375ba, type: 2}
   - {fileID: 186312, guid: 203c25712549e0c41a59a6fa9807c9dd, type: 2}
   - {fileID: 186312, guid: 708bbd45d4be6db42b29b4108f73f008, type: 2}
-  - {fileID: 186312, guid: 89305c0539339d749a6f059aa2f95ab2, type: 2}
   - {fileID: 186312, guid: 31dad63c9d9b59e46b85a77c6beaa874, type: 2}
   - {fileID: 186312, guid: 926faf17dc10d314f94da56f35077c37, type: 2}
-  - {fileID: 186312, guid: f9a44f07ec22d924789b46e84a8e659f, type: 2}
   - {fileID: 186312, guid: 2ad6a3a77f8302e4f98cc8cd2653c61e, type: 2}
-  - {fileID: 186312, guid: d1a44490c49ff7745b4ab46fb321448b, type: 2}
   - {fileID: 186312, guid: 7fe55dcd57e5067478178cd1bb291256, type: 2}
   - {fileID: 186312, guid: db3dc4e856a1b004c874a3f277fef78e, type: 2}
-  - {fileID: 186312, guid: 0fde3304e2f331a45be6fec7eda88d47, type: 2}
   - {fileID: 186312, guid: f5d98d07f39f17f489a4b5bca92cab6a, type: 2}
   - {fileID: 186312, guid: b1718c262c9c48044bf5351c380ea04a, type: 2}
   - {fileID: 186312, guid: 5d0cf5b6ec2cca3438a285c8219d828d, type: 2}
@@ -20778,7 +20774,6 @@ MonoBehaviour:
   - {fileID: 186312, guid: c9d6c7809e459af449775bc87f2dd0ec, type: 2}
   - {fileID: 186312, guid: b92e9a540733f4c469aac1667b2c0770, type: 2}
   - {fileID: 186312, guid: 15855f25cef0946459822e803d6c0411, type: 2}
-  - {fileID: 186312, guid: ec4d5eee6e4699548a76ae32671cf703, type: 2}
   - {fileID: 186312, guid: 2d873a9807537b447936e386e0abf3ad, type: 2}
   - {fileID: 186312, guid: e95c5a55a2a313943b961f5efec49b29, type: 2}
   - {fileID: 186312, guid: ed75fdd78f67726489f670a662a286c9, type: 2}
@@ -20786,29 +20781,21 @@ MonoBehaviour:
   - {fileID: 186312, guid: f3493e829ba93ab41a1aada11bd309f2, type: 2}
   - {fileID: 186312, guid: db1ef30569bf97142b070e4c01bb1fde, type: 2}
   - {fileID: 186312, guid: f8a28f6abd46f3843aaa655b0fdb93c0, type: 2}
-  - {fileID: 186312, guid: 9d7afb611a0a5de438651b78e150f86a, type: 2}
   - {fileID: 186312, guid: 1bfc55b568ec85849aa8420a7f7b1a2a, type: 2}
   - {fileID: 186312, guid: 05070fd04b4445e418dfdb901b3d293a, type: 2}
-  - {fileID: 186312, guid: 0cdfea5a606e11048910b99d00352737, type: 2}
   - {fileID: 186312, guid: 93709f8e76031824eb1b03a47dc60b89, type: 2}
   - {fileID: 186312, guid: bb61ae567d6d7ba4098589850d4f3277, type: 2}
   - {fileID: 186312, guid: 7ef1381831db9cb4594234976d8ec134, type: 2}
-  - {fileID: 186312, guid: cb270b99a449d8744bb320d7230d4384, type: 2}
-  - {fileID: 186312, guid: 4fd195426041358468e5a203fc61946b, type: 2}
   - {fileID: 186312, guid: f3970e299a2f9544b8f7f638bcb91973, type: 2}
   - {fileID: 186312, guid: 84f77758f74a3584bb476984601df0c7, type: 2}
-  - {fileID: 186312, guid: 154748438b72e08429011940a7c15761, type: 2}
   - {fileID: 186312, guid: 34b70277e93f1f64db914bdbec50220c, type: 2}
-  - {fileID: 186312, guid: 148f94a96d47bdf4393c8875a5bb75d7, type: 2}
   - {fileID: 186312, guid: 67c2345f1585b2b458fc53914b04e674, type: 2}
-  - {fileID: 186312, guid: 18cf19d85c7159342a857a55e6d65b1c, type: 2}
-  - {fileID: 186312, guid: f70ddbebe93dfa040be149dfe8090a25, type: 2}
   - {fileID: 186312, guid: 48be0324d36a3864a8ce0d288a6b4586, type: 2}
   - {fileID: 186312, guid: 20cc87ea9f0f19a459521a6637300216, type: 2}
   - {fileID: 186312, guid: 6fe9888ba30599048afae614f33abf37, type: 2}
+  - {fileID: 186312, guid: ce8ff3a70d348ef4eb7b0c49396ba8aa, type: 2}
   catArray:
   - {fileID: 1105756149270606, guid: 85b5b50c542012944a29e4f137deb92a, type: 2}
-  - {fileID: 186312, guid: ce8ff3a70d348ef4eb7b0c49396ba8aa, type: 2}
   scoreText: {fileID: 660192647}
   pos100: {fileID: 883687828}
   neg100: {fileID: 343884666}
