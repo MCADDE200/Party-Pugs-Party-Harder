@@ -65,8 +65,10 @@ namespace Lean.Touch
 
         //POWER UPS
         int goldenBoneCount;
+        int crossPugCount;
         int goldenBoneScoreMultiplier;
         bool goldenBone;
+        bool crossPug;
         float powerUpTimer; //how long before timer gets deactivated
 
         private void Awake()
@@ -76,8 +78,13 @@ namespace Lean.Touch
         // Use this for initialization
         void Start()
         {
+            GameObject gameData = GameObject.Find("GameData");
+            goldenBoneCount = gameData.GetComponent<GameDataScript>().goldenBone;
+            crossPugCount = gameData.GetComponent<GameDataScript>().crossPug;
+
             powerUpTimer = 0;
             goldenBone = false;
+            crossPug = false;
             goldenBoneScoreMultiplier = 1;
             num0Image.enabled = false;
             num1Image.enabled = false;
@@ -175,6 +182,7 @@ namespace Lean.Touch
                 {
                     goldenBone = false;
                     goldenBoneScoreMultiplier = 1;
+                    crossPug = false;
                 }
                 else
                 {
@@ -238,6 +246,17 @@ namespace Lean.Touch
             goldenBone = true;
             goldenBoneScoreMultiplier = 2;
             goldenBoneCount -= 1;
+            GameObject gameData = GameObject.Find("GameData");
+            gameData.GetComponent<GameDataScript>().goldenBone = goldenBoneCount;
+            powerUpTimer = 5;
+        }
+
+        public void CrossPug()
+        {
+            crossPug = true;
+            crossPugCount -= 1;
+            GameObject gameData = GameObject.Find("GameData");
+            gameData.GetComponent<GameDataScript>().crossPug = crossPugCount;
             powerUpTimer = 5;
         }
 
@@ -603,7 +622,8 @@ namespace Lean.Touch
             else
             {
                 neg100.enabled = true;
-                score -= 100;
+                if(!crossPug)
+                    score -= 100;
                 sound.PlayOneShot(wrongSound);
                 wrongAnswers++;
                 Handheld.Vibrate();
