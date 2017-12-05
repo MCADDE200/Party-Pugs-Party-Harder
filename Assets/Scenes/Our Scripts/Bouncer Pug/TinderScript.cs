@@ -19,7 +19,9 @@ namespace Lean.Touch
         bool gameStarted;
         bool lerp;
         int state;
+        bool leftRightLerp;
         public bool bouncerPaused;
+        public bool holdFinalLerpBool;
 
         List<bool> isPug = new List<bool>();
         
@@ -210,6 +212,11 @@ namespace Lean.Touch
                 mainMenuButton.SetActive(true);
             }
             scoreText.text = "Score: " + score;
+
+            if(leftRightLerp)
+            {
+                LerpFinal(holdFinalLerpBool);
+            }
         }
 
         void SpawnAnimal()
@@ -500,7 +507,8 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = true;
                             StartCoroutine(scorePopup(a));
-                            //LerpFinal(isPug[0]);
+                            holdFinalLerpBool = false;
+                            LerpFinal(isPug[0]);
 
                         }
                         else
@@ -509,7 +517,8 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = false;
                             StartCoroutine(scorePopup(a));
-                            //LerpFinal(isPug[0]);
+                            holdFinalLerpBool = false;
+                            LerpFinal(isPug[0]);
                         }
                     }
 
@@ -522,7 +531,8 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = true;
                             StartCoroutine(scorePopup(a));
-                            //LerpFinal(isPug[0]);
+                            holdFinalLerpBool = true;
+                            LerpFinal(isPug[0]);
                         }
                         else
                         {
@@ -530,7 +540,8 @@ namespace Lean.Touch
                             SpawnAnimal();
                             bool a = false;
                             StartCoroutine(scorePopup(a));
-                            //LerpFinal(isPug[0]);
+                            holdFinalLerpBool = true;
+                            LerpFinal(isPug[0]);
                         }
                     }
                 }
