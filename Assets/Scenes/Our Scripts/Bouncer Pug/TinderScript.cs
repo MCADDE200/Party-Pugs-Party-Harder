@@ -63,6 +63,12 @@ namespace Lean.Touch
         public AudioClip correctSound;
         public AudioClip wrongSound;
 
+        //POWER UPS
+        int goldenBoneCount;
+        int goldenBoneScoreMultiplier;
+        bool goldenBone;
+        float powerUpTimer; //how long before timer gets deactivated
+
         private void Awake()
         {
             sound = GetComponent<AudioSource>();
@@ -70,6 +76,9 @@ namespace Lean.Touch
         // Use this for initialization
         void Start()
         {
+            powerUpTimer = 0;
+            goldenBone = false;
+            goldenBoneScoreMultiplier = 1;
             num0Image.enabled = false;
             num1Image.enabled = false;
             num2Image.enabled = false;
@@ -160,6 +169,18 @@ namespace Lean.Touch
                     MoveForward();
                     AnimatePugs(state);
                 }
+
+                //include all future power ups here!
+                if (powerUpTimer <= 0)
+                {
+                    goldenBone = false;
+                    goldenBoneScoreMultiplier = 1;
+                }
+                else
+                {
+                    powerUpTimer -= Time.deltaTime;
+                }
+                
             }
             if (!gameStarted)
             {
@@ -210,6 +231,14 @@ namespace Lean.Touch
                 mainMenuButton.SetActive(true);
             }
             scoreText.text = "Score: " + score;
+        }
+
+        public void GoldenBone()
+        {
+            goldenBone = true;
+            goldenBoneScoreMultiplier = 2;
+            goldenBoneCount -= 1;
+            powerUpTimer = 5;
         }
 
         void SpawnAnimal()
@@ -568,7 +597,7 @@ namespace Lean.Touch
             if (imageShow)
             {
                 pos100.enabled = true;
-                score += 100;
+                score += 100 * goldenBoneScoreMultiplier;
                 sound.PlayOneShot(correctSound);
             }
             else
