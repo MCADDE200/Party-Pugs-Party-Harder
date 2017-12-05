@@ -12,45 +12,64 @@ public class TicketMenuScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-
         tickets = 0;
- 
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         ticketText.text = "Tickets: " + tickets;
-		
 	}
     public void LoadShop()
     {
         SceneManager.LoadScene("Shop");
-    
     }
     public void AddTickets1()
     {
-        tickets += 10;
-
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        {
+            gameData.GetComponent<GameDataScript>().tickets += 10;
+        }
     }
     public void AddTickets2()
     {
-        tickets += 50;
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        {
+            gameData.GetComponent<GameDataScript>().tickets += 50;
+        }
 
     }
     public void AddTickets3()
     {
-        tickets += 100;
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        {
+            gameData.GetComponent<GameDataScript>().tickets += 100;
+        }
 
     }
     public void AddTickets4()
     {
-        tickets += 250;
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        {
+            gameData.GetComponent<GameDataScript>().tickets += 250;
+        }
 
     }
     public void AddTickets5()
     {
-        tickets += 500;
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        {
+            gameData.GetComponent<GameDataScript>().tickets += 500;
+        }
+    }
 
+    public void TicketAmount()
+    {
+        //Output ticket amount
     }
 }

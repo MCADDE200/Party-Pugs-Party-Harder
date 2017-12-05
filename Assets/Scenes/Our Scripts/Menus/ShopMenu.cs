@@ -30,4 +30,9 @@ public class ShopMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("Pug Selection Scene");
     }
+
+    public void LoadPowerUpScene()
+    {
+        SceneManager.LoadScene("PowerUps");
+    }
 }
