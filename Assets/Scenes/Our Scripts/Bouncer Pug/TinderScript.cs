@@ -244,6 +244,7 @@ namespace Lean.Touch
 
             if(leftRightLerp)
             {
+                //Debug.Log("tuka");
                 LerpFinal(holdFinalLerpBool);
             }
         }
@@ -269,9 +270,10 @@ namespace Lean.Touch
 
         void SpawnAnimal()
         {
-            Destroy(GameObject.Find("PugTest" + (counter - 1)));
-            Destroy(GameObject.Find("CatTest" + (counter - 1)));
+            //Destroy(GameObject.Find("PugTest" + (counter - 1)));
+            //Destroy(GameObject.Find("CatTest" + (counter - 1)));
             isPug.RemoveAt(0);
+            leftRightLerp = true;
 
             //MoveForwards();
             //LerpPos();
@@ -398,7 +400,6 @@ namespace Lean.Touch
         {
             if (state == 1)
             {
-                Debug.Log("State Correct");
                 for (int i = 0; i < (isPug.Count - 1); i++)
                 {
                     int offset = i + counter;
@@ -407,7 +408,6 @@ namespace Lean.Touch
                         GameObject temp = GameObject.Find("PugTest" + offset);
                         anim = temp.GetComponentInChildren<Animator>();
                         anim.SetBool("Walking", true);
-                        Debug.Log("Bool Set");
                     }
                     if (GameObject.Find("CatTest" + offset) != null)
                     {
@@ -449,26 +449,55 @@ namespace Lean.Touch
             {
                 if (GameObject.Find("PugTest" + (counter - 1)) != null)
                 {
-                    GameObject temp = GameObject.Find("PugTest" + counter);
+                    GameObject temp = GameObject.Find("PugTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
+                    Debug.Log("PugTest" + (counter-1));
+                    if (temp.transform.position == rightPos.transform.position)
+                    {
+                        Debug.Log("trqq go disablene");
+                        leftRightLerp = false;
+                        Destroy(temp);
+                    }
                 }
                 if (GameObject.Find("CatTest" + (counter - 1)) != null)
                 {
-                    GameObject temp = GameObject.Find("CatTest" + counter);
+                    GameObject temp = GameObject.Find("CatTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, rightPos.transform.position, Time.deltaTime * lerpSpeed);
+                    Debug.Log("CatTest" + (counter-1));
+                    if (temp.transform.position == rightPos.transform.position)
+                    {
+                        Debug.Log("trqq go disablene");
+                        leftRightLerp = false;
+                        Destroy(temp);
+                    }
                 }
+
             }
             else if(!dir)
             {
                 if (GameObject.Find("PugTest" + (counter - 1)) != null)
                 {
-                    GameObject temp = GameObject.Find("PugTest" + counter);
+                    GameObject temp = GameObject.Find("PugTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
+                    Debug.Log("PugTest" + (counter-1));
+                    if (temp.transform.position == leftPos.transform.position)
+                    {
+                        Debug.Log("trqq go disablene");
+                        leftRightLerp = false;
+                        Destroy(temp);
+                    }
                 }
                 if (GameObject.Find("CatTest" + (counter - 1)) != null)
                 {
-                    GameObject temp = GameObject.Find("CatTest" + counter);
+                    GameObject temp = GameObject.Find("CatTest" + (counter-1));
                     temp.transform.position = Vector3.Lerp(temp.transform.position, leftPos.transform.position, Time.deltaTime * lerpSpeed);
+                    Debug.Log("CatTest" + (counter-1));
+                    if (temp.transform.position == leftPos.transform.position)
+                    {
+                        Debug.Log("trqq go disablene");
+                        leftRightLerp = false;
+                        Destroy(temp);
+                    }
                 }
             }
         }
