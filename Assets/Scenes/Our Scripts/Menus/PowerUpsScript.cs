@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PowerUpsScript : MonoBehaviour {
-    
 
-	// Use this for initialization
-	void Start ()
+
+    public Text ticketText;
+
+    // Use this for initialization
+    void Start ()
     {
 
 	}
@@ -15,8 +18,13 @@ public class PowerUpsScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        //Performance heavy - needs optimizing for IP3
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        { 
+            ticketText.text = "" + gameData.GetComponent<GameDataScript>().tickets;
+        }
+    }
 
     public void Back()
     {

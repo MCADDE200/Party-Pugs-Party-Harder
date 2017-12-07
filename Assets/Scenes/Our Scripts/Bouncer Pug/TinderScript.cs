@@ -149,7 +149,7 @@ namespace Lean.Touch
         {
             if (gameStarted)
             {
-                if (countdownTimer > 1 && (!gameOver))
+                if (countdownTimer > 1 && (!gameOver) && !crossPug)
                 {
                     countdownTimer -= Time.deltaTime;
                 }
@@ -251,21 +251,37 @@ namespace Lean.Touch
 
         public void GoldenBone()
         {
-            goldenBone = true;
-            goldenBoneScoreMultiplier = 2;
-            goldenBoneCount -= 1;
             GameObject gameData = GameObject.Find("GameData");
             gameData.GetComponent<GameDataScript>().goldenBone = goldenBoneCount;
-            powerUpTimer = 5;
+            if (goldenBoneCount > 0)
+            {
+                goldenBone = true;
+                goldenBoneScoreMultiplier = 2;
+                goldenBoneCount -= 1;
+                gameData.GetComponent<GameDataScript>().goldenBone -= 1;
+                powerUpTimer = 5;
+            }
+            else
+            {
+                Debug.Log("insufficient power ups");
+            }
         }
 
         public void CrossPug()
         {
-            crossPug = true;
-            crossPugCount -= 1;
             GameObject gameData = GameObject.Find("GameData");
             gameData.GetComponent<GameDataScript>().crossPug = crossPugCount;
-            powerUpTimer = 5;
+            if (crossPugCount > 0)
+            {
+                crossPug = true;
+                crossPugCount -= 1;
+                gameData.GetComponent<GameDataScript>().crossPug -= 1;
+                powerUpTimer = 5;
+            }
+            else
+            {
+                Debug.Log("insufficient power ups");
+            }
         }
 
         void SpawnAnimal()

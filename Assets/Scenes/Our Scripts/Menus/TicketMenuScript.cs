@@ -18,8 +18,13 @@ public class TicketMenuScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        ticketText.text = "Tickets: " + tickets;
-	}
+        //Performance heavy - needs optimizing for IP3
+        GameObject gameData = GameObject.Find("GameData");
+        if (gameData != null)
+        {
+            ticketText.text = "" + gameData.GetComponent<GameDataScript>().tickets;
+        }
+    }
     public void LoadShop()
     {
         SceneManager.LoadScene("Shop");
@@ -66,10 +71,5 @@ public class TicketMenuScript : MonoBehaviour
         {
             gameData.GetComponent<GameDataScript>().tickets += 500;
         }
-    }
-
-    public void TicketAmount()
-    {
-        //Output ticket amount
     }
 }
