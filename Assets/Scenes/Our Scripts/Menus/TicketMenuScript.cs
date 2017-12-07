@@ -31,6 +31,7 @@ public class TicketMenuScript : MonoBehaviour
     }
     public void AddTickets1()
     {
+
         GameObject gameData = GameObject.Find("GameData");
         if (gameData != null)
         {
