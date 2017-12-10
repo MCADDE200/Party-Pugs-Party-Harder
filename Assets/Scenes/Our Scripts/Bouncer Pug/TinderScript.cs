@@ -449,7 +449,7 @@ namespace Lean.Touch
                     {
                         GameObject temp = GameObject.Find("CatTest" + offset);
                         anim = temp.GetComponentInChildren<Animator>();
-                        anim.SetBool("Walking", true);
+                        anim.SetBool("Walking", false);
                     }
                 }
             }
