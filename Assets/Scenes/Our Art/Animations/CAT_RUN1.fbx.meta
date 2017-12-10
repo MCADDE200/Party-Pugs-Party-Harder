@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: 762c712872d9e8f4b96f52d48d94d7dc
+timeCreated: 1512942710
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: blackcat_rigged:Back_Left_1
+    100002: blackcat_rigged:Back_Left_2
+    100004: blackcat_rigged:Back_Left_3
+    100006: blackcat_rigged:Back_Right_1
+    100008: blackcat_rigged:Back_Right_2
+    100010: blackcat_rigged:Back_Right_3
+    100012: blackcat_rigged:backleft_nrub
+    100014: blackcat_rigged:backright_nurb
+    100016: blackcat_rigged:Butt
+    100018: blackcat_rigged:Front_Left_1
+    100020: blackcat_rigged:Front_Left_2
+    100022: blackcat_rigged:Front_Left_3
+    100024: blackcat_rigged:Front_Right_1
+    100026: blackcat_rigged:Front_Right_2
+    100028: blackcat_rigged:Front_Right_3
+    100030: blackcat_rigged:frontleft_nurb
+    100032: blackcat_rigged:frontright_nurb
+    100034: blackcat_rigged:Grey_Cat
+    100036: blackcat_rigged:Head
+    100038: blackcat_rigged:head_nurb
+    100040: blackcat_rigged:ik_backleft
+    100042: blackcat_rigged:ik_backright
+    100044: blackcat_rigged:ik_frontleft
+    100046: blackcat_rigged:ik_frontright
+    100048: blackcat_rigged:ik_head
+    100050: blackcat_rigged:ik_tail1
+    100052: blackcat_rigged:ik_tail2
+    100054: blackcat_rigged:joint10
+    100056: blackcat_rigged:joint11
+    100058: blackcat_rigged:joint9
+    100060: blackcat_rigged:Neck
+    100062: blackcat_rigged:nurbsCircle1
+    100064: blackcat_rigged:Root_Body
+    100066: blackcat_rigged:tail1_nurb
+    100068: blackcat_rigged:tail2_nurb
+    100070: blackcat_rigged:Tail_1
+    100072: blackcat_rigged:Tail_2
+    100074: blackcat_rigged:Tail_3
+    100076: blackcat_rigged:Tail_4
+    100078: //RootNode
+    400000: blackcat_rigged:Back_Left_1
+    400002: blackcat_rigged:Back_Left_2
+    400004: blackcat_rigged:Back_Left_3
+    400006: blackcat_rigged:Back_Right_1
+    400008: blackcat_rigged:Back_Right_2
+    400010: blackcat_rigged:Back_Right_3
+    400012: blackcat_rigged:backleft_nrub
+    400014: blackcat_rigged:backright_nurb
+    400016: blackcat_rigged:Butt
+    400018: blackcat_rigged:Front_Left_1
+    400020: blackcat_rigged:Front_Left_2
+    400022: blackcat_rigged:Front_Left_3
+    400024: blackcat_rigged:Front_Right_1
+    400026: blackcat_rigged:Front_Right_2
+    400028: blackcat_rigged:Front_Right_3
+    400030: blackcat_rigged:frontleft_nurb
+    400032: blackcat_rigged:frontright_nurb
+    400034: blackcat_rigged:Grey_Cat
+    400036: blackcat_rigged:Head
+    400038: blackcat_rigged:head_nurb
+    400040: blackcat_rigged:ik_backleft
+    400042: blackcat_rigged:ik_backright
+    400044: blackcat_rigged:ik_frontleft
+    400046: blackcat_rigged:ik_frontright
+    400048: blackcat_rigged:ik_head
+    400050: blackcat_rigged:ik_tail1
+    400052: blackcat_rigged:ik_tail2
+    400054: blackcat_rigged:joint10
+    400056: blackcat_rigged:joint11
+    400058: blackcat_rigged:joint9
+    400060: blackcat_rigged:Neck
+    400062: blackcat_rigged:nurbsCircle1
+    400064: blackcat_rigged:Root_Body
+    400066: blackcat_rigged:tail1_nurb
+    400068: blackcat_rigged:tail2_nurb
+    400070: blackcat_rigged:Tail_1
+    400072: blackcat_rigged:Tail_2
+    400074: blackcat_rigged:Tail_3
+    400076: blackcat_rigged:Tail_4
+    400078: //RootNode
+    4300000: blackcat_rigged:Grey_Cat
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: blackcat_rigged:Grey_Cat
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
