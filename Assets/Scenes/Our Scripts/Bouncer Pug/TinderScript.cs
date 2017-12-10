@@ -305,7 +305,7 @@ namespace Lean.Touch
             }
             else
             {
-                GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                GameObject catTest = Instantiate(catArray[Random.Range(0, 5)], pos.transform);
                 catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - 9);
                 catTest.name = "CatTest" + (counter + 9);
             }
@@ -324,7 +324,7 @@ namespace Lean.Touch
                 }
                 else
                 {
-                    GameObject catTest = Instantiate(catArray[Random.Range(0, 1)], pos.transform);
+                    GameObject catTest = Instantiate(catArray[Random.Range(0, 5)], pos.transform);
                     catTest.transform.position = new Vector3(catTest.transform.position.x, catTest.transform.position.y, catTest.transform.position.z - i);
                     catTest.name = "CatTest" + i;
                 }
@@ -414,6 +414,7 @@ namespace Lean.Touch
 
         void AnimatePugs(int state)
         {
+
             if (state == 1)
             {
                 for (int i = 0; i < (isPug.Count - 1); i++)
@@ -428,10 +429,8 @@ namespace Lean.Touch
                     if (GameObject.Find("CatTest" + offset) != null)
                     {
                         GameObject temp = GameObject.Find("CatTest" + offset);
-                        if (temp.transform.position != newPosCat[offset])
-                        {
-                            temp.transform.position = Vector3.Lerp(temp.transform.position, newPosCat[offset], Time.deltaTime * lerpSpeed);
-                        }
+                        anim = temp.GetComponentInChildren<Animator>();
+                        anim.SetBool("Walking", true);
                     }
                 }
             }
@@ -449,10 +448,8 @@ namespace Lean.Touch
                     if (GameObject.Find("CatTest" + offset) != null)
                     {
                         GameObject temp = GameObject.Find("CatTest" + offset);
-                        if (temp.transform.position != newPosCat[offset])
-                        {
-                            temp.transform.position = Vector3.Lerp(temp.transform.position, newPosCat[offset], Time.deltaTime * lerpSpeed);
-                        }
+                        anim = temp.GetComponentInChildren<Animator>();
+                        anim.SetBool("Walking", true);
                     }
                 }
             }
