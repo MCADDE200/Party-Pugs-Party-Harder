@@ -63,7 +63,12 @@ namespace Lean.Touch
         Animator anim;
 
         public AudioClip correctSound;
+        public AudioClip correctSound2;
+        public AudioClip correctSound3;
+
         public AudioClip wrongSound;
+        public AudioClip wrongSound2;
+        public AudioClip wrongSound3;
 
         //POWER UPS
         int goldenBoneCount;
@@ -652,6 +657,8 @@ namespace Lean.Touch
 
         IEnumerator scorePopup(bool imageShow)
         {
+            int soundChoice;
+            soundChoice = Random.Range(0, 3);
             if (counter <= 10)
             {
                 countdownTimer = 4.0f;
@@ -668,14 +675,37 @@ namespace Lean.Touch
             {
                 pos100.enabled = true;
                 score += 100 * goldenBoneScoreMultiplier;
-                sound.PlayOneShot(correctSound);
+                switch(soundChoice)
+                {
+                    case 0:
+                        sound.PlayOneShot(correctSound);
+                        break;
+                    case 1:
+                        sound.PlayOneShot(correctSound2);
+                        break;
+                    case 2:
+                        sound.PlayOneShot(correctSound3);
+                        break;
+                }
+                
             }
             else
             {
                 neg100.enabled = true;
                 if(!crossPug)
                     score -= 100;
-                sound.PlayOneShot(wrongSound);
+                switch (soundChoice)
+                {
+                    case 0:
+                        sound.PlayOneShot(wrongSound);
+                        break;
+                    case 1:
+                        sound.PlayOneShot(wrongSound2);
+                        break;
+                    case 2:
+                        sound.PlayOneShot(wrongSound3);
+                        break;
+                }
                 wrongAnswers++;
                 Handheld.Vibrate();
             }

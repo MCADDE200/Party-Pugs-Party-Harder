@@ -27,17 +27,17 @@ namespace Lean.Touch
                 case 0:
                     bouncerButton.SetActive(true);
                     splatButton.SetActive(false);
-                    busButton.SetActive(false);
+                    //busButton.SetActive(false);
                     break;
                 case 1:
                     bouncerButton.SetActive(false);
                     splatButton.SetActive(true);
-                    busButton.SetActive(false);
+                    //busButton.SetActive(false);
                     break;
                 case 2:
                     bouncerButton.SetActive(false);
                     splatButton.SetActive(false);
-                    busButton.SetActive(true);
+                    //busButton.SetActive(true);
                     break;
             }
         }
@@ -55,7 +55,7 @@ namespace Lean.Touch
             {
                 if (levelSelect == 0)
                 {
-                    levelSelect = 2;
+                    levelSelect = 1;
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace Lean.Touch
 
             if (swipe.x > Mathf.Abs(swipe.y))
             {
-                if (levelSelect == 2)
+                if (levelSelect == 1)
                 {
                     levelSelect = 0;
                 }
