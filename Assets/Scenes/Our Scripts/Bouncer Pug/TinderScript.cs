@@ -729,7 +729,7 @@ namespace Lean.Touch
                 Destroy(GameObject.Find("PugTest" + offset));
                 Destroy(GameObject.Find("CatTest" + offset));
             }
-            for (int i = 0; i < (isPug.Count + 1); i++)
+            for (int i = 0; i < 200; i++) // Hardcoded temp fix
             {
                 //int offset = i + counter;
                 Destroy(GameObject.Find("PugTest" + i));
