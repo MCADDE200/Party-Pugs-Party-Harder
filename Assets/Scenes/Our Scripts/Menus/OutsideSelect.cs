@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Lean.Touch
 {
@@ -10,8 +11,10 @@ namespace Lean.Touch
     {
         public GameObject bouncerPugUI;
         public GameObject carnivalStallsUI;
-        public GameObject bouncerButton, splatButton, busButton;
+        public GameObject bouncerButton, splatButton, busButton,bouncerInfoButton, splatInfoButton,bouncerPanel,splatPanel,closeButton1,closeButton2,rightButton,leftButton;
+       
         int levelSelect;
+   
 
         private void Start()
         {
@@ -27,16 +30,25 @@ namespace Lean.Touch
                 case 0:
                     bouncerButton.SetActive(true);
                     splatButton.SetActive(false);
+                    bouncerInfoButton.SetActive(true);
+                    splatInfoButton.SetActive(false);
                     //busButton.SetActive(false);
                     break;
                 case 1:
                     bouncerButton.SetActive(false);
                     splatButton.SetActive(true);
+                    bouncerInfoButton.SetActive(false);
+                    splatInfoButton.SetActive(true);
+
                     //busButton.SetActive(false);
                     break;
                 case 2:
                     bouncerButton.SetActive(false);
                     splatButton.SetActive(false);
+                    bouncerInfoButton.SetActive(false);
+                    splatInfoButton.SetActive(false);
+
+
                     //busButton.SetActive(true);
                     break;
             }
@@ -108,6 +120,37 @@ namespace Lean.Touch
         {
             bouncerPugUI.SetActive(false);
             carnivalStallsUI.SetActive(false);
+        }
+        public void OpenBouncerInfo()
+        {
+            bouncerPanel.SetActive(true);
+        }
+        public void CloseBouncerInfo()
+        {
+            bouncerPanel.SetActive(false);
+        
+        }
+        public void CloseSplatInfo()
+        {
+            splatPanel.SetActive(false);
+
+        }
+        public void OpenSplatInfo()
+        {
+            splatPanel.SetActive(true);
+
+        }
+        public void ChangeGame()
+        {
+            if (levelSelect == 0)
+            {
+                levelSelect = 1;
+            }
+            else
+            {
+                levelSelect--;
+            }
+
         }
 
         protected virtual void OnDisable()
