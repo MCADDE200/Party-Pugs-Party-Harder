@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class TicketMenuScript : MonoBehaviour
 {
-    int tickets;
+    //int tickets;
     public Text ticketText;
 
 	// Use this for initialization
 	void Start ()
     {
-        tickets = 0;
+        //tickets = 0;
 	}
 	
 	// Update is called once per frame
