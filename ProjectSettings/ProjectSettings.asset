@@ -217,7 +217,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/mcadde200/Documents/GitHub/Party-Pugs-Party-Harder/KeyStore/NewPartyPugs.keystore
+  AndroidKeystoreName: D:/WeeMa/Documents/Third Year Uni/Pre-Production/GitHub/Party-Pugs-Party-Harder/KeyStore/NewPartyPugs.keystore
   AndroidKeyaliasName: partypugs
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

@@ -304,7 +304,7 @@ namespace Lean.Touch
 
             if (isPug[9] == true)
             {
-                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 41)], pos.transform);
+                GameObject pugTest = Instantiate(pugArray[Random.Range(0, 40)], pos.transform);
                 pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - 9);
                 pugTest.name = "PugTest" + (counter + 9);
             }
@@ -323,7 +323,7 @@ namespace Lean.Touch
             {
                 if (isPug[i] == true)
                 {
-                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 41)], pos.transform);
+                    GameObject pugTest = Instantiate(pugArray[Random.Range(0, 40)], pos.transform);
                     pugTest.transform.position = new Vector3(pugTest.transform.position.x, pugTest.transform.position.y, pugTest.transform.position.z - i);
                     pugTest.name = "PugTest" + i;
                 }

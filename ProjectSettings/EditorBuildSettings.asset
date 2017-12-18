@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 1fbbb876693e2104f862ac90057e6fd5
   - enabled: 1
     path: Assets/Scenes/Bouncer Pug.unity
-    guid: e9347a79e6229d644b127a47669163aa
+    guid: 786bc7f100cd7db4297cd616ec8edc6f
   - enabled: 1
     path: Assets/Scenes/Splat The Cat.unity
     guid: 8f5a1b7cd6e9720458f867c3f3e88571
@@ -29,9 +29,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pug Selection Scene.unity
     guid: f2a58d1fc175b96488c071db75d680fc
-  - enabled: 0
-    path: 
-    guid: 57b913cb9d6eb0a4ba6367c3a3cadcbd
-  - enabled: 0
-    path: 
-    guid: ba334261daf3be74bb5aa5f84910c19c
